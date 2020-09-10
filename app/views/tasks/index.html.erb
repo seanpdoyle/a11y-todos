@@ -3,30 +3,34 @@
   <%= form_with(scope: :event, url: completions_path) do |form| %>
     <fieldset>
       <legend>
-        <h2><%= translate(".todo") %></h2>
+        <h2 class="text-2xl"><%= translate(".todo") %></h2>
       </legend>
 
       <table>
         <tbody>
           <%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %>
-            <tr>
-              <td><%= builder.check_box %></td>
+            <%= render "row" do %>
+              <td><%= builder.check_box class: "form-checkbox h-6 w-6"%></td>
               <td><%= builder.label %></td>
-            </tr>
+            <% end %>
           <% end %>
         </tbody>
         <tfoot>
-          <tr>
+          <%= render "row" do %>
             <% with_options scope: [:helpers, :submit, :event] do |action| %>
               <td>
-                <%= form.button action.translate(:complete) %>
+                <%= render "button", builder: form, class: "bg-green-400 text-white" do %>
+                  <%= action.translate(:complete) %>
+                <% end %>
               </td>
 
               <td>
-                <%= form.button action.translate(:delay), formaction: delays_path %>
+                <%= render "button", builder: form, formaction: delays_path, class: "bg-teal-400 text-white" do %>
+                  <%= action.translate(:delay) %>
+                <% end %>
               </td>
             <% end %>
-          </tr>
+          <% end %>
         </tfoot>
       </table>
     </fieldset>
@@ -36,22 +40,22 @@
 
 <% if tasks.delayed.any? %>
 <section>
-  <h2><%= translate(".delayed") %></h2>
+  <h2 class="text-2xl"><%= translate(".delayed") %></h2>
 
   <table>
     <% tasks.delayed.each do |task| %>
-      <tr>
+      <%= render "row" do %>
         <td><%= task.name %></td>
 
         <td>
           <%= form_with(scope: :event, url: task_promotions_path(task)) do |form| %>
-            <%= form.button id: dom_id(task, :promote) do %>
+            <%= render "button", builder: form, class: "border px-2 py-1" do %>
               <%= translate(:promote, scope: [:helpers, :submit, :event]) %>
-              <%= task.name %>
+              <span class="sr-only"><%= task.name %></span>
             <% end %>
           <% end %>
         </td>
-      </tr>
+      <% end %>
     <% end %>
   </table>
 </section>
@@ -59,23 +63,23 @@
 
 <% if tasks.completed.any? %>
 <section>
-  <h2><%= translate(".completed") %></h2>
+  <h2 class="text-2xl"><%= translate(".completed") %></h2>
 
   <table>
     <% tasks.completed.each do |task| %>
-      <tr>
+      <%= render "row" do %>
         <td>&checkmark;</td>
         <td><%= task.name %></td>
 
         <td>
           <%= form_with(scope: :event, url: task_reopenings_path(task)) do |form| %>
-            <%= form.button do %>
+            <%= render "button", builder: form, class: "border px-2 py-1" do %>
               <%= translate(:reopen, scope: [:helpers, :submit, :event]) %>
-              <%= task.name %>
+              <span class="sr-only"><%= task.name %></span>
             <% end %>
           <% end %>
         </td>
-      </tr>
+      <% end %>
     <% end %>
   </table>
 </section>

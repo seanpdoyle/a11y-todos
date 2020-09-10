@@ -6,11 +6,13 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "git://github.com/rails/webpacker.git#master",
+    "@tailwindcss/custom-forms": "^0.2.1",
     "stimulus": "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "tailwindcss": "^1.8.7",
     "webpack-dev-server": "^3.11.0"
   },
   "babel": {

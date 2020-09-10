@@ -1,0 +1,11 @@
+<% builder = local_assigns.delete(:builder) || tag %>
+<% class_list = class_names(local_assigns.delete(:class), "
+  focus:outline-none
+  focus:shadow-outline
+  hover:shadow-outline
+  outline-none
+  p-2
+  rounded
+") %>
+
+<%= builder.button(yield, class: class_list, **local_assigns) %>
