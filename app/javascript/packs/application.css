@@ -1,3 +1,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+[open].backdrop\:hidden + .backdrop {
+  display: none;
+}
+
+[open].backdrop\:hidden::backdrop {
+  display: none;
+}

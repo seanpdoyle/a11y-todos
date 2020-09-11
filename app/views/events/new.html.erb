@@ -1,16 +1,28 @@
-<%= form_with(scope: :event, url: completions_path) do |form| %>
+<%= form_with scope: :event, url: completions_path, html: {
+  autocomplete: :off, "data-bulk-target": "form"
+} do |form| %>
   <fieldset>
     <table>
       <tbody>
         <%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %>
-          <%= render "row" do %>
-            <td><%= builder.check_box %></td>
+          <%= render "row", class: "absolute", "data-controller": "tethered",
+            "data-tethered-selector-value": "#" + dom_id(builder.object) do %>
+            <td>
+              <%= builder.check_box class: "
+                focus:shadow-outline
+                form-checkbox
+                h-6
+                hover:shadow-outline
+                text-yellow-500
+                w-6
+              " %>
+            </td>
             <td><%= builder.label %></td>
           <% end %>
         <% end %>
       </tbody>
       <tfoot>
-        <%= render "row" do %>
+        <%= render "row", class: "absolute justify-center bottom-0 left-0 right-0" do %>
           <% with_options scope: [:helpers, :submit, :event] do |action| %>
             <td>
               <%= render "button", builder: form, class: "bg-green-400 text-white" do %>

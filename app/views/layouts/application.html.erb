@@ -9,12 +9,19 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body data-controller="controls-dialog">
+  <body data-controller="bulk controls-dialog">
     <main>
       <%= yield %>
     </main>
 
-    <dialog data-controller="dialog" data-controls-dialog-target="dialog">
+    <dialog data-controller="dialog" data-controls-dialog-target="dialog" data-action="close->bulk#resetForm" class="
+      backdrop:hidden
+      bg-transparent
+      border-0
+      h-full
+      p-0
+      w-full
+    ">
       <%= render(template: "events/new", locals: {tasks: Task.all}) %>
     </dialog>
   </body>

@@ -4,10 +4,11 @@
 
   <table>
     <% tasks.todo.each do |task| %>
-      <%= render "row" do %>
+      <%= render "row", id: dom_id(task) do %>
         <td>
           <%= render "button", id: dom_id(task, :select), type: :button, class: "form-checkbox h-6 w-6",
-            "data-action": "click->controls-dialog#showModal" do %>
+            "data-action": "click->bulk#select click->controls-dialog#showModal",
+            "data-bulk-value": task.id do %>
             <span class="sr-only"><%= translate(".select") %></span>
             <span class="sr-only" aria-hidden="true"><%= task.name %></span>
           <% end %>

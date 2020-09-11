@@ -8,7 +8,6 @@ class TasksTest < ApplicationSystemTestCase
 
     visit root_path
     click_on do_the_homework.name
-    check do_the_homework.name
     check pass_the_test.name
     click_on submit(:event, :complete)
 
@@ -24,7 +23,6 @@ class TasksTest < ApplicationSystemTestCase
 
     visit root_path
     click_on do_the_homework.name
-    check do_the_homework.name
     check pass_the_test.name
     click_on submit(:event, :delay)
 
