@@ -1,7 +1,13 @@
 <%= form_with scope: :event, url: completions_path, html: {
-  autocomplete: :off, "data-bulk-target": "form",
-  "data-action": "input->bulk#resetIfAllUnchecked"
-}  do |form| %>
+  autocomplete: :off, "data-controller": "form", "data-bulk-target": "form",
+  "data-action": "input->bulk#resetIfAllUnchecked input->form#announceChecked"
+} do |form| %>
+  <output class="sr-only"
+    data-form-singular-value="<%= translate(".tasks", count: 1) %>"
+    data-form-plural-value="<%= translate(".tasks", count: 2) %>"
+    data-form-target="output"
+  ></output>
+
   <fieldset>
     <table>
       <tbody data-controller="tabstop-list" data-action="focusin->tabstop-list#trapFocus keydown->tabstop-list#navigate">

@@ -30,6 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  events:
+    new:
+      tasks:
+        one: "selected task."
+        other: "selected tasks."
+
   helpers:
     submit:
       event:
