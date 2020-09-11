@@ -1,6 +1,6 @@
 <%= form_with scope: :event, url: completions_path, html: {
-  autocomplete: :off, "data-bulk-target": "form"
-} do |form| %>
+  autocomplete: :off, "data-bulk-target": "form", "data-action": "input->bulk#resetIfAllUnchecked"
+}  do |form| %>
   <fieldset>
     <table>
       <tbody>
@@ -33,6 +33,12 @@
             <td>
               <%= render "button", builder: form, formaction: delays_path, class: "bg-teal-400 text-white" do %>
                 <%= action.translate(:delay) %>
+              <% end %>
+            </td>
+
+            <td>
+              <%= render "button", builder: form, type: :reset, class: "bg-black text-white" do %>
+                <%= action.translate(:close) %>
               <% end %>
             </td>
           <% end %>

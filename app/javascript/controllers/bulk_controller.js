@@ -5,9 +5,7 @@ export default class extends Controller {
 
   select({ currentTarget }) {
     const value = currentTarget.getAttribute(`data-${this.identifier}-value`)
-    const inputTargets = Array.from(this.formTarget.elements)
-
-    const input = inputTargets.find(input => input.value === value)
+    const input = this.inputTargets.find(input => input.value === value)
 
     if (input) {
       input.checked = true
@@ -15,7 +13,17 @@ export default class extends Controller {
     }
   }
 
+  resetIfAllUnchecked() {
+    if (this.inputTargets.some(input => input.checked)) return
+
+    this.resetForm()
+  }
+
   resetForm() {
     this.formTarget.reset()
+  }
+
+  get inputTargets() {
+    return Array.from(this.formTarget.elements)
   }
 }

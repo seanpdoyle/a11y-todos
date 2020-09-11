@@ -58,6 +58,31 @@ class TasksTest < ApplicationSystemTestCase
     end
   end
 
+  test "resets the form when closing the modal" do
+    do_the_homework, pass_the_test = tasks(:do_the_homework, :pass_the_test)
+
+    visit root_path
+    click_on do_the_homework.name
+    click_on submit(:event, :close)
+    click_on pass_the_test.name
+
+    assert_no_checked_field do_the_homework.name
+    assert_checked_field pass_the_test.name
+  end
+
+  test "switches back to reading mode when there are no checked Tasks" do
+    do_the_homework = tasks(:do_the_homework)
+
+    visit root_path
+    click_on do_the_homework.name
+    uncheck do_the_homework.name
+
+    assert_no_button submit(:event, :complete)
+    within_section :todo do
+      assert_text do_the_homework.name
+    end
+  end
+
   def assert_no_section(i18n_key)
     assert_no_text translate(i18n_key, scope: [:tasks, :index])
   end

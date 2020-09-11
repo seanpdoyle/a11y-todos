@@ -33,6 +33,7 @@ en:
   helpers:
     submit:
       event:
+        close: "Discard"
         complete: "Complete"
         delay: "Delay"
         promote: "Promote"

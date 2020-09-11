@@ -6,4 +6,10 @@ export default class extends Controller {
   connect() {
     dialogPolyfill.registerDialog(this.element)
   }
+
+  close() {
+    if (this.element.open) {
+      this.element.close()
+    }
+  }
 }
