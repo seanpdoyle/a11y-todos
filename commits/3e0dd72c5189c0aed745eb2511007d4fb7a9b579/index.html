@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>Open Bulk Action <form> modally
+</title>
+    <link href="../../stylesheets/site.css" rel="stylesheet" />
+    <script src="../../javascripts/site.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__name">
+<a href="../../">          a11y-todos
+</a>      </h1>
+
+
+      <nav class="
+        header__navigation
+        navigation
+        
+      ">
+<a href="../41701603a392a95c11b500c48ce08d2b93ea561b/">              &#8592; Previous
+</a>
+<a href="../cfc74a25219ece0e34eda6bf334cd8ce020990d3/">              Next &#8594;
+</a>      </nav>
+    </header>
+
+    <main class="content">
+      <details class="accordion content__item">
+        <summary class="accordion__summary">
+          <div class="accordion__closed">
+            <nav class="
+              commit-history
+              u-db-overflow-y--auto
+              u-mb-overflow-x--scroll
+            ">
+                <a href="../4940917510781bfb9d2314695ec402b2e1609f98/" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
+"></a>
+                <a href="../4bda2844904815465f33094f6e5dbc9418b0efa0/" class="commit-node commit-node--collapsed" title="[SKIP]: State project goals in a README"></a>
+                <a href="../850de19eef9666c3de8829e7749b272165bef616/" class="commit-node commit-node--collapsed" title="[GENERATED]: Initial Commit
+"></a>
+                <a href="../7d3c5439519d8b9629f3096b4da6bf46efb214f7/" class="commit-node commit-node--collapsed" title="[GENERATED]: Generate db/schema.rb
+"></a>
+                <a href="../ada2db0c84b8d834edd6eaa771fe60082d0588c9/" class="commit-node commit-node--collapsed" title="Mark Tasks as completed
+"></a>
+                <a href="../7dc0ebbb5d2c9ba1552606c62a5d72b0bc0f2d1d/" class="commit-node commit-node--collapsed" title="[SETUP]: Install TailwindCSS
+"></a>
+                <a href="../53a695a747f52bf2e0614ba54ad54d6571c69238/" class="commit-node commit-node--collapsed" title="Delay multiple Tasks
+"></a>
+                <a href="../41701603a392a95c11b500c48ce08d2b93ea561b/" class="commit-node commit-node--collapsed" title="Open the &lt;dialog&gt; with a &lt;button&gt;"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="Open Bulk Action &lt;form&gt; modally
+" aria-current="page"></a>
+                <a href="../cfc74a25219ece0e34eda6bf334cd8ce020990d3/" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
+"></a>
+                <a href="../00a92ce9a968db862e657cb27662a27dacf520f7/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
+"></a>
+                <a href="../6981a73874b51a7e7b5f87b4622fe5f99ddfbc45/" class="commit-node commit-node--collapsed" title="Declare as role=&quot;grid&quot;
+"></a>
+                <a href="../2974381bc93ca57fc5dff4f233c7d6e005396e4f/" class="commit-node commit-node--collapsed" title="Promote a Task from Delayed back to To-do
+"></a>
+                <a href="../a3748233d6680fef20b40a2eb00fb2fe34e7d33e/" class="commit-node commit-node--collapsed" title="Reopen a Task that was Completed
+"></a>
+                <a href="../e1121f7430f454ed2f60260cbefb70a4b49d84a1/" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
+"></a>
+            </nav>
+
+            <div class="accordion__toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+
+          <div class="accordion__opened">
+            <div class="accordion__toggle accordion__toggle--fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+        </summary>
+
+        <nav class="
+          commit-history
+          commit-history--full
+          u-db-overflow-y--auto
+          u-mb-overflow-x--scroll
+        ">
+<a href="../4940917510781bfb9d2314695ec402b2e1609f98/" class="commit-node commit-node--full">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
+
+</a><a href="../4bda2844904815465f33094f6e5dbc9418b0efa0/" class="commit-node commit-node--full">              <p>[SKIP]: State project goals in a README</p>
+
+</a><a href="../850de19eef9666c3de8829e7749b272165bef616/" class="commit-node commit-node--full">              <p>[GENERATED]: Initial Commit</p>
+
+</a><a href="../7d3c5439519d8b9629f3096b4da6bf46efb214f7/" class="commit-node commit-node--full">              <p>[GENERATED]: Generate db/schema.rb</p>
+
+</a><a href="../ada2db0c84b8d834edd6eaa771fe60082d0588c9/" class="commit-node commit-node--full">              <p>Mark Tasks as completed</p>
+
+</a><a href="../7dc0ebbb5d2c9ba1552606c62a5d72b0bc0f2d1d/" class="commit-node commit-node--full">              <p>[SETUP]: Install TailwindCSS</p>
+
+</a><a href="../53a695a747f52bf2e0614ba54ad54d6571c69238/" class="commit-node commit-node--full">              <p>Delay multiple Tasks</p>
+
+</a><a href="../41701603a392a95c11b500c48ce08d2b93ea561b/" class="commit-node commit-node--full">              <p>Open the <dialog> with a <button></p>
+
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Open Bulk Action <form> modally</p>
+
+</a><a href="../cfc74a25219ece0e34eda6bf334cd8ce020990d3/" class="commit-node commit-node--full">              <p>Close <dialog> when Bulk selection is empty</p>
+
+</a><a href="../00a92ce9a968db862e657cb27662a27dacf520f7/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
+
+</a><a href="../6981a73874b51a7e7b5f87b4622fe5f99ddfbc45/" class="commit-node commit-node--full">              <p>Declare as role=&quot;grid&quot;</p>
+
+</a><a href="../2974381bc93ca57fc5dff4f233c7d6e005396e4f/" class="commit-node commit-node--full">              <p>Promote a Task from Delayed back to To-do</p>
+
+</a><a href="../a3748233d6680fef20b40a2eb00fb2fe34e7d33e/" class="commit-node commit-node--full">              <p>Reopen a Task that was Completed</p>
+
+</a><a href="../e1121f7430f454ed2f60260cbefb70a4b49d84a1/" class="commit-node commit-node--full">              <p>Treat Lists as separate tab stops</p>
+
+</a>        </nav>
+      </details>
+
+      <article class="
+        commit-content
+        commit-content--double
+        content__item
+        content__item--grow
+      ">
+        <section class="commit commit--message">
+
+          <h1 id="open-bulk-action-modally">Open Bulk Action <form> modally</h1>
+
+<p>When a Task element&rsquo;s corresponding <code>&lt;button&gt;</code> element is clicked, open
+the Bulk Action <code>&lt;form&gt;</code> element, nested within the page&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog"><code>&lt;dialog&gt;</code>
+element</a>.</p>
+
+<p>Annotate the <code>&lt;button&gt;</code> elements with a <code>[data-bulk-value]</code> attribute,
+so that the <a href="https://stimulusjs.org/reference/actions"><code>Bulk.select</code> action</a> can infer the first
+<code>&lt;input type=&quot;checkbox&quot;&gt;</code> element within its <code>&lt;form&gt;</code> to both set <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement#Properties_checkbox_radio"><code>checked =
+true</code></a> and call <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/focus"><code>.focus()</code> on</a>.</p>
+
+<p>To mimic <code>&lt;button&gt;</code> elements&rsquo; <code>:focus</code> and <code>:hover</code> pseudo-classes of
+<code>&lt;input type=&quot;checkbox&quot;&gt;</code> elements, style their
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline"><code>outline:</code></a> and <code>box-shadow:</code> properties via Tailwind&rsquo;s
+<code>.group-focus</code> and <code>.group-hover</code> classes, respectively.</p>
+
+        </section>
+
+          <aside class="commit commit--diff commit--long-content">
+              <details
+  id="app/javascript/controllers/bulk_controller.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/controllers/bulk_controller.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/controllers/bulk_controller.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/controllers/bulk_controller.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/bulk_controller.js b/app/javascript/controllers/bulk_controller.js
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..d800b82
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/javascript/controllers/bulk_controller.js
+</span><span class="p">@@ -0,0 +1,21 @@</span>
+<span class="gi">+import { Controller } from "stimulus"
++
++export default class extends Controller {
++  static targets = [ "form" ]
++
++  select({ currentTarget }) {
++    const value = currentTarget.getAttribute(`data-${this.identifier}-value`)
++    const inputTargets = Array.from(this.formTarget.elements)
++
++    const input = inputTargets.find(input =&gt; input.value === value)
++
++    if (input) {
++      input.checked = true
++      input.focus()
++    }
++  }
++
++  resetForm() {
++    this.formTarget.reset()
++  }
++}
+</span></code></pre></div></details>
+
+              <details
+  id="app/javascript/controllers/tethered_controller.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/controllers/tethered_controller.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/controllers/tethered_controller.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/controllers/tethered_controller.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/tethered_controller.js b/app/javascript/controllers/tethered_controller.js
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..4f5f28b
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/javascript/controllers/tethered_controller.js
+</span><span class="p">@@ -0,0 +1,17 @@</span>
+<span class="gi">+import { Controller } from "stimulus"
++
++export default class extends Controller {
++  static values = { selector: String }
++
++  connect() {
++    const destinationTarget = document.querySelector(this.selectorValue)
++
++    if (destinationTarget) {
++      const { top, left, height } = destinationTarget.getBoundingClientRect()
++
++      this.element.style.left = left + "px"
++      this.element.style.height = height + "px"
++      this.element.style.top = top + "px"
++    }
++  }
++}
+</span></code></pre></div></details>
+
+              <details
+  id="app/javascript/packs/application.css"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/packs/application.css</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/packs/application.css</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/packs/application.css
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/packs/application.css b/app/javascript/packs/application.css
+index 76fcadc..cddfcac 100644
+</span><span class="gd">--- a/app/javascript/packs/application.css
+</span><span class="gi">+++ b/app/javascript/packs/application.css
+</span><span class="p">@@ -1,3 +1,8 @@</span>
+ @import "tailwindcss/base";
+ @import "tailwindcss/components";
+ @import "tailwindcss/utilities";
+<span class="gi">+
++[open].backdrop\:hidden + .backdrop,
++[open].backdrop\:hidden::backdrop {
++  display: none;
++}
+</span></code></pre></div></details>
+
+              <details
+  id="app/views/events/new.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/events/new.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/events/new.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/events/new.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/events/new.html.erb b/app/views/events/new.html.erb
+index 803219e..35981ae 100644
+</span><span class="gd">--- a/app/views/events/new.html.erb
+</span><span class="gi">+++ b/app/views/events/new.html.erb
+</span><span class="p">@@ -1,26 +1,34 @@</span>
+<span class="gd">-&lt;%= form_with(scope: :event, url: completions_path) do |form| %&gt;
+</span><span class="gi">+&lt;%= form_with(scope: :event, url: completions_path, html: { autocomplete: :off, "data-bulk-target": "form" }) do |form| %&gt;
+</span>   &lt;fieldset&gt;
+     &lt;table&gt;
+       &lt;tbody&gt;
+         &lt;%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %&gt;
+<span class="gd">-          &lt;tr class="flex flex-row flex-start"&gt;
+</span><span class="gi">+          &lt;tr class="absolute flex flex-row flex-start" data-controller="tethered" data-tethered-selector-value="#&lt;%= dom_id(builder.object) %&gt;"&gt;
+</span>             &lt;td&gt;
+               &lt;%= builder.check_box class: "
+<span class="gi">+                focus:shadow-outline
++                form-checkbox
+</span>                 h-6
+<span class="gi">+                hover:shadow-outline
++                text-yellow-500
+</span>                 w-6
+               " %&gt;
+             &lt;/td&gt;
+             &lt;td&gt;&lt;%= builder.label %&gt;&lt;/td&gt;
+<span class="gd">-          &lt;/tr&gt;
+</span><span class="gi">+          &lt;/li&gt;
+</span>         &lt;% end %&gt;
+       &lt;/tbody&gt;
+       &lt;tfoot&gt;
+<span class="gd">-        &lt;tr class="flex flex-row"&gt;
+</span><span class="gi">+        &lt;tr class="absolute flex flex-row justify-center left-0 right-0"&gt;
+</span>           &lt;% with_options scope: [:helpers, :submit, :event] do |action| %&gt;
+             &lt;td&gt;
+               &lt;%= form.button action.translate(:complete), class: "
+                 bg-green-400
+                 color-white
+<span class="gi">+                focus:outline-none
++                focus:shadow-outline
++                hover:shadow-outline
++                outline-none
+</span>                 p-2
+                 rounded
+               " %&gt;
+<span class="p">@@ -30,6 +38,9 @@</span>
+               &lt;%= form.button action.translate(:delay), formaction: delays_path, class: "
+                 bg-teal-400
+                 color-white
+<span class="gi">+                focus:outline-none
++                focus:shadow-outline
++                hover:shadow-outline
+</span>                 p-2
+                 rounded
+               " %&gt;
+</code></pre></div></details>
+
+              <details
+  id="app/views/layouts/application.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/layouts/application.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/layouts/application.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/layouts/application.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb
+index 637c481..364caac 100644
+</span><span class="gd">--- a/app/views/layouts/application.html.erb
+</span><span class="gi">+++ b/app/views/layouts/application.html.erb
+</span><span class="p">@@ -9,12 +9,19 @@</span>
+     &lt;%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %&gt;
+   &lt;/head&gt;
+ 
+<span class="gd">-  &lt;body data-controller="controls-dialog"&gt;
+</span><span class="gi">+  &lt;body data-controller="bulk controls-dialog"&gt;
+</span>     &lt;main&gt;
+       &lt;%= yield %&gt;
+     &lt;/main&gt;
+ 
+<span class="gd">-    &lt;dialog data-controller="dialog" data-controls-dialog-target="dialog"&gt;
+</span><span class="gi">+    &lt;dialog data-controller="dialog" data-controls-dialog-target="dialog" data-action="close-&gt;bulk#resetForm" class="
++      backdrop:hidden
++      bg-transparent
++      border-0
++      h-full
++      p-0
++      w-full
++    "&gt;
+</span>       &lt;%= render(template: "events/new", locals: {tasks: Task.all}) %&gt;
+     &lt;/dialog&gt;
+   &lt;/body&gt;
+</code></pre></div></details>
+
+              <details
+  id="app/views/tasks/index.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/tasks/index.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/tasks/index.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/tasks/index.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/tasks/index.html.erb b/app/views/tasks/index.html.erb
+index fffdcc7..22c5c8c 100644
+</span><span class="gd">--- a/app/views/tasks/index.html.erb
+</span><span class="gi">+++ b/app/views/tasks/index.html.erb
+</span><span class="p">@@ -4,16 +4,18 @@</span>
+ 
+   &lt;table&gt;
+     &lt;% tasks.todo.each do |task| %&gt;
+<span class="gd">-      &lt;tr class="flex flex-row flex-start"&gt;
+</span><span class="gi">+      &lt;tr id="&lt;%= dom_id(task) %&gt;" class="flex flex-row flex-start"&gt;
+</span>         &lt;td&gt;
+<span class="gd">-          &lt;button id="&lt;%= dom_id(task, :select) %&gt;" type="button" data-action="click-&gt;controls-dialog#showModal" class="
+-            bg-white
+-            border
+-            border-yellow-400
+-            h-6
+-            rounded
+-            w-6
+-          "&gt;
+</span><span class="gi">+          &lt;button id="&lt;%= dom_id(task, :select) %&gt;" type="button" data-action="click-&gt;bulk#select click-&gt;controls-dialog#showModal" data-bulk-value="&lt;%= task.id %&gt;" class="flex flex-row focus:outline-none group"&gt;
++            &lt;span class="
++              form-checkbox
++              group-focus:outline-none
++              group-focus:shadow-outline
++              group-hover:shadow-outline
++              h-6
++              w-6
++            "&gt;
++            &lt;/span&gt;
+</span>             &lt;span class="sr-only"&gt;&lt;%= translate(".select") %&gt;&lt;/span&gt;
+             &lt;span class="sr-only" aria-hidden="true"&gt;&lt;%= task.name %&gt;&lt;/span&gt;
+           &lt;/button&gt;
+</code></pre></div></details>
+
+              <details
+  id="package.json"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse package.json</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand package.json</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      package.json
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/package.json b/package.json
+index 637da35..f45e115 100644
+</span><span class="gd">--- a/package.json
+</span><span class="gi">+++ b/package.json
+</span><span class="p">@@ -12,6 +12,7 @@</span>
+   },
+   "version": "0.1.0",
+   "devDependencies": {
+<span class="gi">+    "@tailwindcss/custom-forms": "^0.2.1",
+</span>     "tailwindcss": "^1.8.7",
+     "webpack-dev-server": "^3.11.0"
+   },
+</code></pre></div></details>
+
+              <details
+  id="tailwind.config.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse tailwind.config.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand tailwind.config.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      tailwind.config.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/tailwind.config.js b/tailwind.config.js
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..2f4513a
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/tailwind.config.js
+</span><span class="p">@@ -0,0 +1,9 @@</span>
+<span class="gi">+module.exports = {
++  plugins: [
++    require("@tailwindcss/custom-forms")
++  ],
++  variants: {
++    boxShadow: ["responsive", "hover", "focus", "group-focus", "group-hover"],
++    outline: ["responsive", "focus", "group-focus"]
++  }
++}
+</span></code></pre></div></details>
+
+              <details
+  id="yarn.lock"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse yarn.lock</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand yarn.lock</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      yarn.lock
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/yarn.lock b/yarn.lock
+index 57b97b4..89aa10a 100644
+</span><span class="gd">--- a/yarn.lock
+</span><span class="gi">+++ b/yarn.lock
+</span><span class="p">@@ -933,6 +933,15 @@</span>
+   version "1.1.1"
+   resolved "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/@stimulus/webpack-helpers.tar.gz#1f1b3d79ed21ec4930f28cb65fa0868bcbe96042"
+ 
+<span class="gi">+"@tailwindcss/custom-forms@^0.2.1":
++  version "0.2.1"
++  resolved "https://registry.yarnpkg.com/@tailwindcss/custom-forms/-/custom-forms-0.2.1.tgz#40e5ed1fff6d29d8ed1c508a0b2aaf8da96962e0"
++  integrity sha512-XdP5XY6kxo3x5o50mWUyoYWxOPV16baagLoZ5uM41gh6IhXzhz/vJYzqrTb/lN58maGIKlpkxgVsQUNSsbAS3Q==
++  dependencies:
++    lodash "^4.17.11"
++    mini-svg-data-uri "^1.0.3"
++    traverse "^0.6.6"
++
+</span> "@types/color-name@^1.1.1":
+   version "1.1.1"
+   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
+<span class="p">@@ -4125,6 +4134,11 @@</span> mini-css-extract-plugin@^0.9.0:
+     schema-utils "^1.0.0"
+     webpack-sources "^1.1.0"
+ 
+<span class="gi">+mini-svg-data-uri@^1.0.3:
++  version "1.2.3"
++  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.2.3.tgz#e16baa92ad55ddaa1c2c135759129f41910bc39f"
++  integrity sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==
++
+</span> minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
+   version "1.0.1"
+   resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
+<span class="p">@@ -6552,6 +6566,11 @@</span> toidentifier@1.0.0:
+   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
+   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+ 
+<span class="gi">+traverse@^0.6.6:
++  version "0.6.6"
++  resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
++  integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
++
+</span> ts-pnp@^1.1.6:
+   version "1.2.0"
+   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
+</code></pre></div></details>
+
+          </aside>
+      </article>
+    </main>
+  </body>
+</html>
