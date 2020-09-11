@@ -1,0 +1,38 @@
+<section>
+  <%= form_with(scope: :event, url: completions_path) do |form| %>
+    <fieldset>
+      <legend>
+        <h2><%= translate(".todo") %></h2>
+      </legend>
+
+      <table>
+        <tbody>
+          <%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %>
+            <tr>
+              <td><%= builder.check_box %></td>
+              <td><%= builder.label %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><%= form.button %></td>
+          </tr>
+        </tfoot>
+      </table>
+    </fieldset>
+  <% end %>
+</section>
+
+<section>
+  <h2><%= translate(".completed") %></h2>
+
+  <table>
+    <% tasks.completed.each do |task| %>
+      <tr>
+        <td>&checkmark;</td>
+        <td><%= task.name %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>

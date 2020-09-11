@@ -1,0 +1,9 @@
+read_the_book:
+  name: "Read the book"
+  completed_at: <%= 1.week.ago %>
+
+do_the_homework:
+  name: "Do the homework"
+
+pass_the_test:
+  name: "Pass the test"
