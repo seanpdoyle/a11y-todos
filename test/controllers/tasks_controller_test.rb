@@ -25,6 +25,14 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_no_section :delayed
   end
 
+  test "#index omits the Todo list when there are no Task records to be worked on" do
+    Task.todo.update_all(completed_at: Time.current)
+
+    get root_path
+
+    assert_no_section :todo
+  end
+
   def assert_no_section(i18n_key)
     title = translate(i18n_key, scope: [:tasks, :index])
 

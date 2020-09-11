@@ -35,6 +35,7 @@ en:
       event:
         complete: "Complete"
         delay: "Delay"
+        promote: "Promote"
 
   tasks:
     index:

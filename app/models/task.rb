@@ -10,4 +10,8 @@ class Task < ApplicationRecord
   def delay!
     update!(delayed_at: Time.current)
   end
+
+  def promote!
+    update!(delayed_at: nil)
+  end
 end

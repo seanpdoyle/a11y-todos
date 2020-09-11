@@ -58,4 +58,15 @@ class TaskTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "#promote! marks a Task's delayed_at to nil" do
+    freeze_time do
+      do_the_homework = tasks(:do_the_homework)
+      do_the_homework.delay!
+
+      assert_changes -> { do_the_homework.delayed_at }, from: Time.current, to: nil do
+        do_the_homework.promote!
+      end
+    end
+  end
 end

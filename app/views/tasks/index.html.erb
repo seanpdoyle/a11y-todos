@@ -42,6 +42,15 @@
     <% tasks.delayed.each do |task| %>
       <tr>
         <td><%= task.name %></td>
+
+        <td>
+          <%= form_with(scope: :event, url: task_promotions_path(task)) do |form| %>
+            <%= form.button id: dom_id(task, :promote) do %>
+              <%= translate(:promote, scope: [:helpers, :submit, :event]) %>
+              <%= task.name %>
+            <% end %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   resources :completions, only: :create
   resources :delays, only: :create
 
+  resources :tasks, only: [] do
+    resources :promotions, only: :create
+  end
+
   root to: "tasks#index"
 end

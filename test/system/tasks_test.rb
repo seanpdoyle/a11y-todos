@@ -33,6 +33,19 @@ class TasksTest < ApplicationSystemTestCase
     end
   end
 
+  test "promotes delayed Task back to Todo" do
+    do_the_homework = tasks(:do_the_homework)
+    do_the_homework.delay!
+
+    visit root_path
+    within_task(do_the_homework.name) { click_on submit(:event, :promote) }
+
+    assert_no_section :delayed
+    within_section :todo do
+      assert_text do_the_homework.name
+    end
+  end
+
   def assert_no_section(i18n_key)
     assert_no_text translate(i18n_key, scope: [:tasks, :index])
   end
@@ -41,6 +54,10 @@ class TasksTest < ApplicationSystemTestCase
     title = translate(i18n_key, scope: [:tasks, :index])
 
     within("section", text: title, &block)
+  end
+
+  def within_task(text, &block)
+    within("tr", text: text, &block)
   end
 
   def submit(i18n_key, action)
