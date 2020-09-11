@@ -2,7 +2,7 @@
 <section>
   <h2 class="text-2xl"><%= translate(".todo") %></h2>
 
-  <table>
+  <table data-controller="tabstop-list" data-action="focusin->tabstop-list#trapFocus keydown->tabstop-list#navigate">
     <% tasks.todo.each do |task| %>
       <%= render "row", id: dom_id(task) do %>
         <td>
@@ -27,7 +27,7 @@
 <section>
   <h2 class="text-2xl"><%= translate(".delayed") %></h2>
 
-  <table>
+  <table data-controller="tabstop-list" data-action="focusin->tabstop-list#trapFocus keydown->tabstop-list#navigate">
     <% tasks.delayed.each do |task| %>
       <%= render "row" do %>
         <td><%= task.name %></td>
@@ -50,7 +50,7 @@
 <section>
   <h2 class="text-2xl"><%= translate(".completed") %></h2>
 
-  <table>
+  <table data-controller="tabstop-list" data-action="focusin->tabstop-list#trapFocus keydown->tabstop-list#navigate">
     <% tasks.completed.each do |task| %>
       <%= render "row" do %>
         <td>&checkmark;</td>

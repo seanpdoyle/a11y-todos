@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/citizensadvice/capybara_accessible_selectors.git
+  revision: 21b295b8f0650064738d0d2a115220be3066581a
+  tag: v0.2.0
+  specs:
+    capybara_accessible_selectors (0.2.0)
+      capybara (~> 3)
+
+GIT
   remote: https://github.com/rails/rails.git
   revision: e3b8ba396bd2737ccc054178fda2e64ed20893e1
   specs:
@@ -220,6 +228,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  capybara_accessible_selectors!
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

@@ -83,6 +83,46 @@ class TasksTest < ApplicationSystemTestCase
     end
   end
 
+  test "treats the lists as separate tab stops" do
+    todo, completed = tasks(:pass_the_test, :read_the_book)
+
+    visit root_path
+    send_keys :tab
+    send_keys :down
+    send_keys :tab
+
+    assert_button completed.name, focused: true
+
+    send_keys [:shift, :tab]
+
+    assert_button todo.name, focused: true
+  end
+
+  test "navigates the Bulk Action buttons with arrow keys" do
+    do_the_homework = tasks(:do_the_homework)
+
+    visit root_path
+    click_on do_the_homework.name
+    send_keys :tab
+    send_keys :down
+
+    assert_button submit(:event, :delay), focused: true
+
+    send_keys :right
+
+    assert_button submit(:event, :close), focused: true
+  end
+
+  def send_keys(*arguments)
+    (active_element || find("body")).send_keys(*arguments)
+  end
+
+  def active_element
+    execute_script <<~JS
+      return document.activeElement
+    JS
+  end
+
   def assert_no_section(i18n_key)
     assert_no_text translate(i18n_key, scope: [:tasks, :index])
   end

@@ -4,7 +4,7 @@
 }  do |form| %>
   <fieldset>
     <table>
-      <tbody>
+      <tbody data-controller="tabstop-list" data-action="focusin->tabstop-list#trapFocus keydown->tabstop-list#navigate">
         <%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %>
           <%= render "row", class: "absolute", "data-controller": "tethered",
             "data-tethered-selector-value": "#" + dom_id(builder.object) do %>
@@ -24,7 +24,7 @@
           <% end %>
         <% end %>
       </tbody>
-      <tfoot>
+      <tfoot data-controller="tabstop-list" data-tabstop-list-horizontal-value="true" data-action="focusin->tabstop-list#trapFocus keydown->tabstop-list#navigate">
         <%= render "row", class: "absolute justify-center bottom-0 left-0 right-0" do %>
           <% with_options scope: [:helpers, :submit, :event] do |action| %>
             <td>
