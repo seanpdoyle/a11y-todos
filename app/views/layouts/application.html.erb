@@ -9,7 +9,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body data-controller="controls-dialog">
+    <main>
+      <%= yield %>
+    </main>
+
+    <dialog data-controller="dialog" data-controls-dialog-target="dialog">
+      <%= render(template: "events/new", locals: {tasks: Task.all}) %>
+    </dialog>
   </body>
 </html>

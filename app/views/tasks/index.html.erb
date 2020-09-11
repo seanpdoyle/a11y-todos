@@ -1,40 +1,24 @@
 <% if tasks.todo.any? %>
 <section>
-  <%= form_with(scope: :event, url: completions_path) do |form| %>
-    <fieldset>
-      <legend>
-        <h2 class="text-2xl"><%= translate(".todo") %></h2>
-      </legend>
+  <h2 class="text-2xl"><%= translate(".todo") %></h2>
 
-      <table>
-        <tbody>
-          <%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %>
-            <%= render "row" do %>
-              <td><%= builder.check_box class: "form-checkbox h-6 w-6"%></td>
-              <td><%= builder.label %></td>
-            <% end %>
+  <table>
+    <% tasks.todo.each do |task| %>
+      <%= render "row" do %>
+        <td>
+          <%= render "button", id: dom_id(task, :select), type: :button, class: "form-checkbox h-6 w-6",
+            "data-action": "click->controls-dialog#showModal" do %>
+            <span class="sr-only"><%= translate(".select") %></span>
+            <span class="sr-only" aria-hidden="true"><%= task.name %></span>
           <% end %>
-        </tbody>
-        <tfoot>
-          <%= render "row" do %>
-            <% with_options scope: [:helpers, :submit, :event] do |action| %>
-              <td>
-                <%= render "button", builder: form, class: "bg-green-400 text-white" do %>
-                  <%= action.translate(:complete) %>
-                <% end %>
-              </td>
+        </td>
 
-              <td>
-                <%= render "button", builder: form, formaction: delays_path, class: "bg-teal-400 text-white" do %>
-                  <%= action.translate(:delay) %>
-                <% end %>
-              </td>
-            <% end %>
-          <% end %>
-        </tfoot>
-      </table>
-    </fieldset>
-  <% end %>
+        <td>
+          <label for="<%= dom_id(task, :select) %>"><%= task.name %></label>
+        </td>
+      <% end %>
+    <% end %>
+  </table>
 </section>
 <% end %>
 

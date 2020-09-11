@@ -42,4 +42,5 @@ en:
     index:
       completed: "Completed"
       delayed: "Delayed"
+      select: "Select: "
       todo: "Tasks"

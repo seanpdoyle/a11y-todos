@@ -2459,6 +2459,11 @@ detective@^5.2.0:
     defined "^1.0.0"
     minimist "^1.1.1"
 
+dialog-polyfill@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/dialog-polyfill/-/dialog-polyfill-0.5.3.tgz#ba7a288ea34a79210cb220bc305dd33ac08aaee5"
+  integrity sha512-DVYazl3klQtPjs4dOzDTOt4uQ8cRDfu8EBhoY81ISmH0fbrMvYuaethcQ9UevmF9kAaLnBJ0O5eDUnZ7QalArA==
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
