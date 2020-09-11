@@ -83,34 +83,25 @@ class TasksTest < ApplicationSystemTestCase
     end
   end
 
-  test "treats the lists as separate tab stops" do
-    todo, completed = tasks(:pass_the_test, :read_the_book)
-
-    visit root_path
-    send_keys :tab
-    send_keys :down
-    send_keys :tab
-
-    assert_button completed.name, focused: true
-
-    send_keys [:shift, :tab]
-
-    assert_button todo.name, focused: true
-  end
-
-  test "navigates the Bulk Action buttons with arrow keys" do
+  test "performs actions on Tasks through keyboard navigation" do
     do_the_homework = tasks(:do_the_homework)
 
     visit root_path
-    click_on do_the_homework.name
-    send_keys :tab
-    send_keys :down
+    until has_button? do_the_homework.name, focused: true do
+      send_keys :tab
+    end
+    send_keys :space
+    until has_button? submit(:event, :complete), focused: true do
+      send_keys :tab
+    end
+    send_keys :space
 
-    assert_button submit(:event, :delay), focused: true
-
-    send_keys :right
-
-    assert_button submit(:event, :close), focused: true
+    within_section :todo do
+      assert_no_text do_the_homework.name
+    end
+    within_section :completed do
+      assert_text do_the_homework.name
+    end
   end
 
   def send_keys(*arguments)
