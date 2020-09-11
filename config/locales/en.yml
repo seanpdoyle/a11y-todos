@@ -33,9 +33,11 @@ en:
   helpers:
     submit:
       event:
-        submit: "Complete"
+        complete: "Complete"
+        delay: "Delay"
 
   tasks:
     index:
       completed: "Completed"
+      delayed: "Delayed"
       todo: "Tasks"

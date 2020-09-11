@@ -1,3 +1,4 @@
+<% if tasks.todo.any? %>
 <section>
   <%= form_with(scope: :event, url: completions_path) do |form| %>
     <fieldset>
@@ -16,14 +17,38 @@
         </tbody>
         <tfoot>
           <tr>
-            <td><%= form.button %></td>
+            <% with_options scope: [:helpers, :submit, :event] do |action| %>
+              <td>
+                <%= form.button action.translate(:complete) %>
+              </td>
+
+              <td>
+                <%= form.button action.translate(:delay), formaction: delays_path %>
+              </td>
+            <% end %>
           </tr>
         </tfoot>
       </table>
     </fieldset>
   <% end %>
 </section>
+<% end %>
 
+<% if tasks.delayed.any? %>
+<section>
+  <h2><%= translate(".delayed") %></h2>
+
+  <table>
+    <% tasks.delayed.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>
+<% end %>
+
+<% if tasks.completed.any? %>
 <section>
   <h2><%= translate(".completed") %></h2>
 
@@ -36,3 +61,4 @@
     <% end %>
   </table>
 </section>
+<% end %>
