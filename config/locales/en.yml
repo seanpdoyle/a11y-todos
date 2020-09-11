@@ -36,6 +36,7 @@ en:
         complete: "Complete"
         delay: "Delay"
         promote: "Promote"
+        reopen: "Reopen"
 
   tasks:
     index:

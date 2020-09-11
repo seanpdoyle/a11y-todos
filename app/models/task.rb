@@ -14,4 +14,8 @@ class Task < ApplicationRecord
   def promote!
     update!(delayed_at: nil)
   end
+
+  def reopen!
+    update!(completed_at: nil)
+  end
 end

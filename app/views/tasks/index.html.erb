@@ -66,6 +66,15 @@
       <tr>
         <td>&checkmark;</td>
         <td><%= task.name %></td>
+
+        <td>
+          <%= form_with(scope: :event, url: task_reopenings_path(task)) do |form| %>
+            <%= form.button do %>
+              <%= translate(:reopen, scope: [:helpers, :submit, :event]) %>
+              <%= task.name %>
+            <% end %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

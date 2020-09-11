@@ -69,4 +69,15 @@ class TaskTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "#reopen! marks a Task's completed_at to nil" do
+    freeze_time do
+      read_the_book = tasks(:read_the_book)
+      read_the_book.complete!
+
+      assert_changes -> { read_the_book.completed_at }, from: Time.current, to: nil do
+        read_the_book.reopen!
+      end
+    end
+  end
 end

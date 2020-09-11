@@ -46,6 +46,18 @@ class TasksTest < ApplicationSystemTestCase
     end
   end
 
+  test "reopens a completed Task back to Todo" do
+    read_the_book = tasks(:read_the_book)
+
+    visit root_path
+    within_task(read_the_book.name) { click_on submit(:event, :reopen) }
+
+    assert_no_section :completed
+    within_section :todo do
+      assert_text read_the_book.name
+    end
+  end
+
   def assert_no_section(i18n_key)
     assert_no_text translate(i18n_key, scope: [:tasks, :index])
   end

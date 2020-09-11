@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :tasks, only: [] do
     resources :promotions, only: :create
+    resources :reopenings, only: :create
   end
 
   root to: "tasks#index"
