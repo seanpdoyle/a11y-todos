@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     resources :reopenings, only: :create
   end
 
+  constraints -> { _1.xml_http_request? } do
+    resources :events, only: :new
+  end
+
   root to: "tasks#index"
 end

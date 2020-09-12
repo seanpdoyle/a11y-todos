@@ -1,5 +1,6 @@
 <%= form_with scope: :event, url: completions_path, html: {
-  autocomplete: :off, "data-bulk-target": "form", "data-action": "input->bulk#resetIfAllUnchecked"
+  autocomplete: :off, "data-bulk-target": "form",
+  "data-action": "input->bulk#resetIfAllUnchecked"
 }  do |form| %>
   <fieldset>
     <table>
@@ -8,14 +9,16 @@
           <%= render "row", class: "absolute", "data-controller": "tethered",
             "data-tethered-selector-value": "#" + dom_id(builder.object) do %>
             <td>
-              <%= builder.check_box class: "
-                focus:shadow-outline
-                form-checkbox
-                h-6
-                hover:shadow-outline
-                text-yellow-500
-                w-6
-              " %>
+              <% (builder.object == selected_task).tap do |selected| %>
+                <%= builder.check_box checked: selected, autofocus: selected, class: "
+                  focus:shadow-outline
+                  form-checkbox
+                  h-6
+                  hover:shadow-outline
+                  text-yellow-500
+                  w-6
+                " %>
+              <% end %>
             </td>
             <td><%= builder.label %></td>
           <% end %>

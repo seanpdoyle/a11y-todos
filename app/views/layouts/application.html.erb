@@ -14,7 +14,8 @@
       <%= yield %>
     </main>
 
-    <dialog data-controller="dialog" data-controls-dialog-target="dialog" data-action="close->bulk#resetForm reset->dialog#close" class="
+    <dialog data-controller="dialog" data-controls-dialog-target="dialog"
+      data-action="close->bulk#reset close->controls-dialog#release reset->dialog#close" class="
       backdrop:hidden
       bg-transparent
       border-0
@@ -22,7 +23,14 @@
       p-0
       w-full
     ">
-      <%= render(template: "events/new", locals: {tasks: Task.all}) %>
+      <div data-remote-fragment-outlet-target></div>
+
+      <%= form_with url: new_event_path, id: :new_event_form, method: :get, html: {
+        "data-controller": "remote-fragment",
+        "data-controls-dialog-target": "remoteFragment",
+        "data-remote-fragment-outlet-selector-value": "[data-remote-fragment-outlet-target]",
+        "data-action": "ajax:success->remote-fragment#replace reset->remote-fragment#remove"
+      } %>
     </dialog>
   </body>
 </html>
