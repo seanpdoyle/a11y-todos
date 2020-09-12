@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title>[SKIP]: Create `git-read` GitHub Action
+    <title>Announce selected Task count
 </title>
     <link href="../../stylesheets/site.css" rel="stylesheet" />
     <script src="../../javascripts/site.js"></script>
@@ -20,10 +20,11 @@
       <nav class="
         header__navigation
         navigation
-        navigation--next
+        
       ">
-
-<a href="../b7dd0dfeec5d3ea4332f21d545383e90fdca0358/">              Next &#8594;
+<a href="../c68e48b1ab33e78efb18f201dc719edeb48d9074/">              &#8592; Previous
+</a>
+<a href="../f7e442d0e23860f1c0e6378f2bea7575add823d0/">              Next &#8594;
 </a>      </nav>
     </header>
 
@@ -36,8 +37,8 @@
               u-db-overflow-y--auto
               u-mb-overflow-x--scroll
             ">
-                <a href="./" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
-" aria-current="page"></a>
+                <a href="../4940917510781bfb9d2314695ec402b2e1609f98/" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
+"></a>
                 <a href="../b7dd0dfeec5d3ea4332f21d545383e90fdca0358/" class="commit-node commit-node--collapsed" title="[SKIP]: State project goals in a README"></a>
                 <a href="../97ec982181dad3d2765c18bd5440eccdbbc98500/" class="commit-node commit-node--collapsed" title="[GENERATED]: Initial Commit
 "></a>
@@ -68,8 +69,8 @@
                 <a href="../5141babdd49816543733f15b6c39d4210b889dba/" class="commit-node commit-node--collapsed" title="Section 3: How can we improve accessibility?"></a>
                 <a href="../c68e48b1ab33e78efb18f201dc719edeb48d9074/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
 "></a>
-                <a href="../2d480ca3f7fd855fec98890bc2d0a780c015c085/" class="commit-node commit-node--collapsed" title="Announce selected Task count
-"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="Announce selected Task count
+" aria-current="page"></a>
                 <a href="../f7e442d0e23860f1c0e6378f2bea7575add823d0/" class="commit-node commit-node--collapsed" title="Use `&lt;caption&gt;` and `&lt;th&gt;` elements
 "></a>
             </nav>
@@ -108,7 +109,7 @@
           u-db-overflow-y--auto
           u-mb-overflow-x--scroll
         ">
-<a href="./" class="commit-node commit-node--full" aria-current="page">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
+<a href="../4940917510781bfb9d2314695ec402b2e1609f98/" class="commit-node commit-node--full">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
 
 </a><a href="../b7dd0dfeec5d3ea4332f21d545383e90fdca0358/" class="commit-node commit-node--full">              <p>[SKIP]: State project goals in a README</p>
 
@@ -144,7 +145,7 @@
 
 </a><a href="../c68e48b1ab33e78efb18f201dc719edeb48d9074/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
 
-</a><a href="../2d480ca3f7fd855fec98890bc2d0a780c015c085/" class="commit-node commit-node--full">              <p>Announce selected Task count</p>
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Announce selected Task count</p>
 
 </a><a href="../f7e442d0e23860f1c0e6378f2bea7575add823d0/" class="commit-node commit-node--full">              <p>Use <code>&lt;caption&gt;</code> and <code>&lt;th&gt;</code> elements</p>
 
@@ -159,27 +160,165 @@
       ">
         <section class="commit commit--message">
 
-          <h1 id="skip-create-git-read-github-action">[SKIP]: Create <code>git-read</code> GitHub Action</h1>
+          <h1 id="announce-selected-task-count">Announce selected Task count</h1>
 
-<p>Utilize the <a href="https://github.com/seanpdoyle/git-read"><code>seanpdoyle/git-read</code></a> [GitHub Action] to
-generate web pages from this project&rsquo;s Git history.</p>
+<p>Declare an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output"><code>&lt;output&gt;</code> element</a> within the <code>&lt;form&gt;</code>, and
+keep it updated with the number of <code>&lt;input type=&quot;checkbox&quot; checked&gt;</code>
+elements.</p>
 
-<p>The declarations in <code>.github/workflow/git-read.yml</code> were inspired by the
-corresponding GitHub Action workflow declared in the <a href="https://github.com/seanpdoyle/git-read/blob/main/.github/workflows/git-read.yml"><code>git-read</code>
-repository</a>.</p>
+<p>According to the documentation:</p>
 
-<p>Specifying the <code>--git-dir</code> and <code>--output-dir</code> values in terms of the
-GitHub Actions-provided <a href="https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables"><code>$GITHUB_WORKSPACE</code> environment variable</a>
-is important to ensure that the proper output is pushed to the
-<code>gh-pages</code> branch.</p>
+<blockquote>
+<p>Many browsers implement this element as an <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions"><code>aria-live</code>
+region</a>. Assistive technology will thereby announce the
+results of UI interactions posted inside it without requiring that
+focus is switched away from the controls that produce those results.</p>
+</blockquote>
 
-<p>Upon each <code>git push</code> to this repository, this project&rsquo;s Git history will
-be rendered as HTML and deployed to the <a href="https://pages.github.com/"><code>gh-pages</code> branch</a>,
-available at https://seanpdoyle.github.io/select-your-own-seat.</p>
+<p>This provides a mechanism to communicate to Screen Readers the number of
+Task records that are ready to be operated on in bulk.</p>
 
         </section>
 
           <aside class="commit commit--diff commit--long-content">
+              <details
+  id="app/javascript/controllers/form_controller.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/controllers/form_controller.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/controllers/form_controller.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/controllers/form_controller.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/form_controller.js b/app/javascript/controllers/form_controller.js
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..c3df988
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/javascript/controllers/form_controller.js
+</span><span class="p">@@ -0,0 +1,25 @@</span>
+<span class="gi">+import { Controller } from "stimulus"
++
++export default class extends Controller {
++  static targets = [ "output" ]
++
++  connect() {
++    if (this.hasOutputTarget) {
++      this.announceChecked()
++    }
++  }
++
++  announceChecked() {
++    const { length } = this.inputTargets.filter(input =&gt; input.checked)
++    const attribute = length === 1 ?
++      `data-${this.identifier}-singular-value` :
++      `data-${this.identifier}-plural-value`
++    const message = `${length} ${this.outputTarget.getAttribute(attribute)}`
++
++    this.outputTarget.innerHTML = message
++  }
++
++  get inputTargets() {
++    return Array.from(this.element.elements)
++  }
++}
+</span></code></pre></div></details>
+
+              <details
+  id="app/views/events/new.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/events/new.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/events/new.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/events/new.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/events/new.html.erb b/app/views/events/new.html.erb
+index 211252a..c475287 100644
+</span><span class="gd">--- a/app/views/events/new.html.erb
+</span><span class="gi">+++ b/app/views/events/new.html.erb
+</span><span class="p">@@ -1,7 +1,13 @@</span>
+ &lt;%= form_with scope: :event, url: completions_path, html: {
+<span class="gd">-  autocomplete: :off, "data-bulk-target": "form",
+-  "data-action": "input-&gt;bulk#resetIfAllUnchecked"
+-}  do |form| %&gt;
+</span><span class="gi">+  autocomplete: :off, "data-controller": "form", "data-bulk-target": "form",
++  "data-action": "input-&gt;bulk#resetIfAllUnchecked input-&gt;form#announceChecked"
++} do |form| %&gt;
++  &lt;output class="sr-only"
++    data-form-singular-value="&lt;%= translate(".tasks", count: 1) %&gt;"
++    data-form-plural-value="&lt;%= translate(".tasks", count: 2) %&gt;"
++    data-form-target="output"
++  &gt;&lt;/output&gt;
++
+</span>   &lt;fieldset&gt;
+     &lt;table&gt;
+       &lt;tbody data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
+</code></pre></div></details>
+
+              <details
+  id="config/locales/en.yml"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse config/locales/en.yml</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand config/locales/en.yml</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      config/locales/en.yml
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/config/locales/en.yml b/config/locales/en.yml
+index 4d85eda..4da91e9 100644
+</span><span class="gd">--- a/config/locales/en.yml
+</span><span class="gi">+++ b/config/locales/en.yml
+</span><span class="p">@@ -30,6 +30,12 @@</span>
+ # available at https://guides.rubyonrails.org/i18n.html.
+ 
+ en:
+<span class="gi">+  events:
++    new:
++      tasks:
++        one: "selected task."
++        other: "selected tasks."
++
+</span>   helpers:
+     submit:
+       event:
+</code></pre></div></details>
+
           </aside>
       </article>
     </main>
