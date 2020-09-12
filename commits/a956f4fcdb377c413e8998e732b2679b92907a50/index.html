@@ -24,7 +24,7 @@
       ">
 <a href="../7cd9dc370017733dbd67d7755c892ccd5b0d1a01/">              &#8592; Previous
 </a>
-<a href="../f6a14799d167b271374083188ed60d726c305bf3/">              Next &#8594;
+<a href="../d9dcdb739d57402c8579706e2bbc0bcc8bca15d6/">              Next &#8594;
 </a>      </nav>
     </header>
 
@@ -60,11 +60,11 @@
 "></a>
                 <a href="./" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
 " aria-current="page"></a>
-                <a href="../f6a14799d167b271374083188ed60d726c305bf3/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
+                <a href="../d9dcdb739d57402c8579706e2bbc0bcc8bca15d6/" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
 "></a>
-                <a href="../bc92226f206db4be4036287a66234f64b83fdf03/" class="commit-node commit-node--collapsed" title="Declare as role=&quot;grid&quot;
+                <a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
 "></a>
-                <a href="../93b5eef2be8bd92d6e042afc27726a55bf6f9e80/" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
+                <a href="../5655c692be66d240dda2a5a3bbe9dc28ba9d7f2f/" class="commit-node commit-node--collapsed" title="Announce selected Task count
 "></a>
             </nav>
 
@@ -126,11 +126,11 @@
 
 </a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Close <dialog> when Bulk selection is empty</p>
 
-</a><a href="../f6a14799d167b271374083188ed60d726c305bf3/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
+</a><a href="../d9dcdb739d57402c8579706e2bbc0bcc8bca15d6/" class="commit-node commit-node--full">              <p>Treat Lists as separate tab stops</p>
 
-</a><a href="../bc92226f206db4be4036287a66234f64b83fdf03/" class="commit-node commit-node--full">              <p>Declare as role=&quot;grid&quot;</p>
+</a><a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
 
-</a><a href="../93b5eef2be8bd92d6e042afc27726a55bf6f9e80/" class="commit-node commit-node--full">              <p>Treat Lists as separate tab stops</p>
+</a><a href="../5655c692be66d240dda2a5a3bbe9dc28ba9d7f2f/" class="commit-node commit-node--full">              <p>Announce selected Task count</p>
 
 </a>        </nav>
       </details>
@@ -271,7 +271,7 @@ index b231734..ef104ca 100644
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/events/new.html.erb b/app/views/events/new.html.erb
-index 0a0b76a..810a475 100644
+index 0a0b76a..8eea3b7 100644
 </span><span class="gd">--- a/app/views/events/new.html.erb
 </span><span class="gi">+++ b/app/views/events/new.html.erb
 </span><span class="p">@@ -1,4 +1,4 @@</span>
@@ -280,21 +280,15 @@ index 0a0b76a..810a475 100644
 </span>   &lt;fieldset&gt;
      &lt;table&gt;
        &lt;tbody&gt;
-<span class="p">@@ -33,6 +33,18 @@</span>
+<span class="p">@@ -33,6 +33,12 @@</span>
                  &lt;%= action.translate(:delay) %&gt;
                &lt;% end %&gt;
              &lt;/td&gt;
 <span class="gi">+
 +            &lt;td&gt;
-+              &lt;%= form.button action.translate(:close), type: :reset, class: "
-+                bg-black
-+                text-white
-+                focus:outline-none
-+                focus:shadow-outline
-+                hover:shadow-outline
-+                p-2
-+                rounded
-+              " %&gt;
++              &lt;%= render "button", builder: form, type: :reset, class: "bg-black text-white" do %&gt;
++                &lt;%= action.translate(:close) %&gt;
++              &lt;% end %&gt;
 +            &lt;/td&gt;
 </span>           &lt;% end %&gt;
          &lt;% end %&gt;

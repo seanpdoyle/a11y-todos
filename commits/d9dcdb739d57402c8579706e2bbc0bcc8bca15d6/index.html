@@ -20,11 +20,12 @@
       <nav class="
         header__navigation
         navigation
-        navigation--previous
+        
       ">
-<a href="../bc92226f206db4be4036287a66234f64b83fdf03/">              &#8592; Previous
+<a href="../a956f4fcdb377c413e8998e732b2679b92907a50/">              &#8592; Previous
 </a>
-      </nav>
+<a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/">              Next &#8594;
+</a>      </nav>
     </header>
 
     <main class="content">
@@ -57,14 +58,14 @@
 "></a>
                 <a href="../7cd9dc370017733dbd67d7755c892ccd5b0d1a01/" class="commit-node commit-node--collapsed" title="Open Bulk Action `&lt;form&gt;` modally
 "></a>
-                <a href="../d06f5d378d15ddff467726c5e9ada7b5a2747b4e/" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
-"></a>
-                <a href="../f6a14799d167b271374083188ed60d726c305bf3/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
-"></a>
-                <a href="../bc92226f206db4be4036287a66234f64b83fdf03/" class="commit-node commit-node--collapsed" title="Declare as role=&quot;grid&quot;
+                <a href="../a956f4fcdb377c413e8998e732b2679b92907a50/" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
 "></a>
                 <a href="./" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
 " aria-current="page"></a>
+                <a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
+"></a>
+                <a href="../5655c692be66d240dda2a5a3bbe9dc28ba9d7f2f/" class="commit-node commit-node--collapsed" title="Announce selected Task count
+"></a>
             </nav>
 
             <div class="accordion__toggle">
@@ -123,13 +124,13 @@
 
 </a><a href="../7cd9dc370017733dbd67d7755c892ccd5b0d1a01/" class="commit-node commit-node--full">              <p>Open Bulk Action <code>&lt;form&gt;</code> modally</p>
 
-</a><a href="../d06f5d378d15ddff467726c5e9ada7b5a2747b4e/" class="commit-node commit-node--full">              <p>Close <dialog> when Bulk selection is empty</p>
-
-</a><a href="../f6a14799d167b271374083188ed60d726c305bf3/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
-
-</a><a href="../bc92226f206db4be4036287a66234f64b83fdf03/" class="commit-node commit-node--full">              <p>Declare as role=&quot;grid&quot;</p>
+</a><a href="../a956f4fcdb377c413e8998e732b2679b92907a50/" class="commit-node commit-node--full">              <p>Close <dialog> when Bulk selection is empty</p>
 
 </a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Treat Lists as separate tab stops</p>
+
+</a><a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
+
+</a><a href="../5655c692be66d240dda2a5a3bbe9dc28ba9d7f2f/" class="commit-node commit-node--full">              <p>Announce selected Task count</p>
 
 </a>        </nav>
       </details>
@@ -154,11 +155,99 @@
 regained.</p>
 
 <p>To go along with that restriction, treat the up and down arrows as
-keyboard shortcuts to move between focusable items in the list.</p>
+keyboard shortcuts to move between focusable items in the list, and add
+a System Test to exercise that behavior.</p>
+
+<p>To make assertions about focus state, add a dependency on the
+<a href="https://github.com/citizensadvice/capybara_accessible_selectors"><code>capybara_accessible_selectors</code> gem</a> to
+augment the standard set of <a href="https://www.rubydoc.info/github/teamcapybara/capybara/Capybara/Selector"><code>Capybara</code> selectors and
+filters</a>.</p>
 
         </section>
 
           <aside class="commit commit--diff commit--long-content">
+              <details
+  id="Gemfile"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse Gemfile</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand Gemfile</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      Gemfile
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/Gemfile b/Gemfile
+index 72a0f96..8c4b1f0 100644
+</span><span class="gd">--- a/Gemfile
+</span><span class="gi">+++ b/Gemfile
+</span><span class="p">@@ -46,6 +46,7 @@</span> end
+ group :test do
+   # Adds support for Capybara system testing and selenium driver
+   gem 'capybara', '&gt;= 2.15'
+<span class="gi">+  gem 'capybara_accessible_selectors', github: 'citizensadvice/capybara_accessible_selectors', tag: 'v0.2.0'
+</span>   gem 'selenium-webdriver'
+   # Easy installation and use of web drivers to run system tests with browsers
+   gem 'webdrivers'
+</code></pre></div></details>
+
+              <details
+  id="Gemfile.lock"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse Gemfile.lock</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand Gemfile.lock</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      Gemfile.lock
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/Gemfile.lock b/Gemfile.lock
+index 01e5291..8aa1ef7 100644
+</span><span class="gd">--- a/Gemfile.lock
+</span><span class="gi">+++ b/Gemfile.lock
+</span><span class="p">@@ -1,3 +1,11 @@</span>
+<span class="gi">+GIT
++  remote: https://github.com/citizensadvice/capybara_accessible_selectors.git
++  revision: 21b295b8f0650064738d0d2a115220be3066581a
++  tag: v0.2.0
++  specs:
++    capybara_accessible_selectors (0.2.0)
++      capybara (~&gt; 3)
++
+</span> GIT
+   remote: https://github.com/rails/rails.git
+   revision: e3b8ba396bd2737ccc054178fda2e64ed20893e1
+<span class="p">@@ -220,6 +228,7 @@</span> DEPENDENCIES
+   bootsnap (&gt;= 1.4.2)
+   byebug
+   capybara (&gt;= 2.15)
+<span class="gi">+  capybara_accessible_selectors!
+</span>   jbuilder (~&gt; 2.7)
+   listen (~&gt; 3.2)
+   pg (&gt;= 0.18, &lt; 2.0)
+</code></pre></div></details>
+
               <details
   id="app/javascript/controllers/tabstop_list_controller.js"
   open
@@ -260,27 +349,27 @@ keyboard shortcuts to move between focusable items in the list.</p>
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/events/new.html.erb b/app/views/events/new.html.erb
-index 1997689..a5f5749 100644
+index 8eea3b7..bb04640 100644
 </span><span class="gd">--- a/app/views/events/new.html.erb
 </span><span class="gi">+++ b/app/views/events/new.html.erb
-</span><span class="p">@@ -8,7 +8,7 @@</span>
- 
+</span><span class="p">@@ -1,7 +1,7 @@</span>
+ &lt;%= form_with(scope: :event, url: completions_path, html: { autocomplete: :off, "data-bulk-target": "form", "data-action": "input-&gt;bulk#resetIfAllUnchecked" }) do |form| %&gt;
    &lt;fieldset&gt;
-     &lt;table role="grid"&gt;
+     &lt;table&gt;
 <span class="gd">-      &lt;tbody&gt;
 </span><span class="gi">+      &lt;tbody data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
 </span>         &lt;%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %&gt;
            &lt;%= render "row", class: "absolute", "data-controller": "tethered",
              "data-tethered-selector-value": "#" + dom_id(builder.object) do %&gt;
-<span class="p">@@ -27,7 +27,7 @@</span>
+<span class="p">@@ -19,7 +19,7 @@</span>
+           &lt;% end %&gt;
          &lt;% end %&gt;
        &lt;/tbody&gt;
- 
 <span class="gd">-      &lt;tfoot&gt;
 </span><span class="gi">+      &lt;tfoot data-controller="tabstop-list" data-tabstop-list-horizontal-value="true" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
 </span>         &lt;%= render "row", class: "absolute justify-center left-0 right-0" do %&gt;
            &lt;% with_options scope: [:helpers, :submit, :event] do |action| %&gt;
-             &lt;td role="cell"&gt;
+             &lt;td&gt;
 </code></pre></div></details>
 
               <details
@@ -305,36 +394,36 @@ index 1997689..a5f5749 100644
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/tasks/index.html.erb b/app/views/tasks/index.html.erb
-index 40184d3..31b9172 100644
+index 61a7add..3dae364 100644
 </span><span class="gd">--- a/app/views/tasks/index.html.erb
 </span><span class="gi">+++ b/app/views/tasks/index.html.erb
 </span><span class="p">@@ -2,7 +2,7 @@</span>
  &lt;section&gt;
    &lt;h2 class="text-2xl"&gt;&lt;%= translate(".todo") %&gt;&lt;/h1&gt;
  
-<span class="gd">-  &lt;table role="grid"&gt;
-</span><span class="gi">+  &lt;table role="grid" data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
+<span class="gd">-  &lt;table&gt;
+</span><span class="gi">+  &lt;table data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
 </span>     &lt;% tasks.todo.each do |task| %&gt;
        &lt;%= render "row", id: dom_id(task) do %&gt;
-         &lt;td role="cell"&gt;
+         &lt;td&gt;
 <span class="p">@@ -27,7 +27,7 @@</span>
  &lt;section&gt;
    &lt;h2 class="text-2xl"&gt;&lt;%= translate(".delayed") %&gt;&lt;/h2&gt;
  
-<span class="gd">-  &lt;table role="grid"&gt;
-</span><span class="gi">+  &lt;table role="grid" data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
+<span class="gd">-  &lt;table&gt;
+</span><span class="gi">+  &lt;table data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
 </span>     &lt;% tasks.delayed.each do |task| %&gt;
        &lt;%= render "row" do %&gt;
-         &lt;td role="cell"&gt;&lt;%= task.name %&gt;&lt;/td&gt;
+         &lt;td&gt;&lt;%= task.name %&gt;&lt;/td&gt;
 <span class="p">@@ -50,7 +50,7 @@</span>
  &lt;section&gt;
    &lt;h2 class="text-2xl"&gt;&lt;%= translate(".completed") %&gt;&lt;/h2&gt;
  
-<span class="gd">-  &lt;table role="grid"&gt;
-</span><span class="gi">+  &lt;table role="grid" data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
+<span class="gd">-  &lt;table&gt;
+</span><span class="gi">+  &lt;table data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
 </span>     &lt;% tasks.completed.each do |task| %&gt;
        &lt;%= render "row" do %&gt;
-         &lt;td role="cell"&gt;&amp;checkmark;&lt;/td&gt;
+         &lt;td&gt;&amp;checkmark;&lt;/td&gt;
 </code></pre></div></details>
 
               <details
@@ -359,10 +448,10 @@ index 40184d3..31b9172 100644
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/test/system/tasks_test.rb b/test/system/tasks_test.rb
-index 2af57d1..803682c 100644
+index 0db8be3..a170a4e 100644
 </span><span class="gd">--- a/test/system/tasks_test.rb
 </span><span class="gi">+++ b/test/system/tasks_test.rb
-</span><span class="p">@@ -106,6 +106,36 @@</span> class TasksTest &lt; ApplicationSystemTestCase
+</span><span class="p">@@ -85,6 +85,46 @@</span> class TasksTest &lt; ApplicationSystemTestCase
      end
    end
  
@@ -396,8 +485,18 @@ index 2af57d1..803682c 100644
 +    assert_button submit(:event, :close), focused: true
 +  end
 +
-</span>   def send_keys(*arguments)
-     (active_element || find("body")).send_keys(*arguments)
++  def send_keys(*arguments)
++    (active_element || find("body")).send_keys(*arguments)
++  end
++
++  def active_element
++    execute_script &lt;&lt;~JS
++      return document.activeElement
++    JS
++  end
++
+</span>   def assert_no_section(i18n_key)
+     assert_no_text translate(i18n_key, scope: [:tasks, :index])
    end
 </code></pre></div></details>
 

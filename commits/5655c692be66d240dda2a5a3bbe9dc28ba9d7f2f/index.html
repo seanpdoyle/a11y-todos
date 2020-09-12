@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title>Declare as role="grid"
+    <title>Announce selected Task count
 </title>
     <link href="../../stylesheets/site.css" rel="stylesheet" />
     <script src="../../javascripts/site.js"></script>
@@ -20,12 +20,11 @@
       <nav class="
         header__navigation
         navigation
-        
+        navigation--previous
       ">
-<a href="../f6a14799d167b271374083188ed60d726c305bf3/">              &#8592; Previous
+<a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/">              &#8592; Previous
 </a>
-<a href="../93b5eef2be8bd92d6e042afc27726a55bf6f9e80/">              Next &#8594;
-</a>      </nav>
+      </nav>
     </header>
 
     <main class="content">
@@ -58,14 +57,14 @@
 "></a>
                 <a href="../7cd9dc370017733dbd67d7755c892ccd5b0d1a01/" class="commit-node commit-node--collapsed" title="Open Bulk Action `&lt;form&gt;` modally
 "></a>
-                <a href="../d06f5d378d15ddff467726c5e9ada7b5a2747b4e/" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
+                <a href="../a956f4fcdb377c413e8998e732b2679b92907a50/" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
 "></a>
-                <a href="../f6a14799d167b271374083188ed60d726c305bf3/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
+                <a href="../d9dcdb739d57402c8579706e2bbc0bcc8bca15d6/" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
 "></a>
-                <a href="./" class="commit-node commit-node--collapsed" title="Declare as role=&quot;grid&quot;
+                <a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
+"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="Announce selected Task count
 " aria-current="page"></a>
-                <a href="../93b5eef2be8bd92d6e042afc27726a55bf6f9e80/" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
-"></a>
             </nav>
 
             <div class="accordion__toggle">
@@ -124,13 +123,13 @@
 
 </a><a href="../7cd9dc370017733dbd67d7755c892ccd5b0d1a01/" class="commit-node commit-node--full">              <p>Open Bulk Action <code>&lt;form&gt;</code> modally</p>
 
-</a><a href="../d06f5d378d15ddff467726c5e9ada7b5a2747b4e/" class="commit-node commit-node--full">              <p>Close <dialog> when Bulk selection is empty</p>
+</a><a href="../a956f4fcdb377c413e8998e732b2679b92907a50/" class="commit-node commit-node--full">              <p>Close <dialog> when Bulk selection is empty</p>
 
-</a><a href="../f6a14799d167b271374083188ed60d726c305bf3/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
+</a><a href="../d9dcdb739d57402c8579706e2bbc0bcc8bca15d6/" class="commit-node commit-node--full">              <p>Treat Lists as separate tab stops</p>
 
-</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Declare as role=&quot;grid&quot;</p>
+</a><a href="../b17fef1b661d34200bd32fa0650d2f7bc9f21c46/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
 
-</a><a href="../93b5eef2be8bd92d6e042afc27726a55bf6f9e80/" class="commit-node commit-node--full">              <p>Treat Lists as separate tab stops</p>
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Announce selected Task count</p>
 
 </a>        </nav>
       </details>
@@ -143,14 +142,23 @@
       ">
         <section class="commit commit--message">
 
-          <h1 id="declare-as-role-grid">Declare as role=&ldquo;grid&rdquo;</h1>
+          <h1 id="announce-selected-task-count">Announce selected Task count</h1>
 
-<p>Integrates with the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Grid_Role"><code>[role=&quot;grid&quot;]</code></a>,
-<a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Row_Role"><code>[role=&quot;row&quot;]</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Cell_Role"><code>[role=&quot;cell&quot;]</code></a> attributes.</p>
+<p>Declare an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output"><code>&lt;output&gt;</code> element</a> within the <code>&lt;form&gt;</code>, and
+keep it updated with the number of <code>&lt;input type=&quot;checkbox&quot; checked&gt;</code>
+elements.</p>
 
-<p>In addition to that, declare an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output"><code>&lt;output&gt;</code> element</a> within
-the <code>&lt;form&gt;</code>, and keep it updated with the number of <code>&lt;input
-type=&quot;checkbox&quot; checked&gt;</code> elements.</p>
+<p>According to the documentation:</p>
+
+<blockquote>
+<p>Many browsers implement this element as an <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions"><code>aria-live</code>
+region</a>. Assistive technology will thereby announce the
+results of UI interactions posted inside it without requiring that
+focus is switched away from the controls that produce those results.</p>
+</blockquote>
+
+<p>This provides a mechanism to communicate to Screen Readers the number of
+Task records that are ready to be operated on in bulk.</p>
 
         </section>
 
@@ -177,7 +185,7 @@ type=&quot;checkbox&quot; checked&gt;</code> elements.</p>
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/bulk_controller.js b/app/javascript/controllers/bulk_controller.js
-index 96d1e3c..b2b3038 100644
+index 96d1e3c..3174e82 100644
 </span><span class="gd">--- a/app/javascript/controllers/bulk_controller.js
 </span><span class="gi">+++ b/app/javascript/controllers/bulk_controller.js
 </span><span class="p">@@ -1,7 +1,7 @@</span>
@@ -189,7 +197,7 @@ index 96d1e3c..b2b3038 100644
 </span> 
    select({ currentTarget }) {
      const value = currentTarget.getAttribute(`data-${this.identifier}-value`)
-<span class="p">@@ -10,9 +10,17 @@</span> export default class extends Controller {
+<span class="p">@@ -10,9 +10,21 @@</span> export default class extends Controller {
      if (input) {
        input.checked = true
        input.autofocus = true
@@ -199,90 +207,19 @@ index 96d1e3c..b2b3038 100644
    }
  
 <span class="gi">+  announceSelected() {
-+    const checkedInputs = this.inputTargets.filter(input =&gt; input.checked)
++    const { length } = this.inputTargets.filter(input =&gt; input.checked)
++    const attribute = length === 1 ?
++      `data-${this.identifier}-singular-value` :
++      `data-${this.identifier}-plural-value`
++    const message = `${length} ${this.outputTarget.getAttribute(attribute)}`
 +
-+    this.outputTarget.setAttribute("data-count-value", checkedInputs.length)
++    this.outputTarget.innerHTML = message
 +  }
 +
 </span>   resetIfAllUnchecked() {
      if (this.inputTargets.some(input =&gt; input.checked)) return
  
 </code></pre></div></details>
-
-              <details
-  id="app/javascript/packs/application.css"
-  open
-  class="file"
->
-  <summary class="file__name">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/packs/application.css</title>
-  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
-</svg>
-
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/packs/application.css</title>
-  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
-</svg>
-
-
-    <code>
-      app/javascript/packs/application.css
-    </code>
-  </summary>
-
-<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/packs/application.css b/app/javascript/packs/application.css
-index cddfcac..b6dae57 100644
-</span><span class="gd">--- a/app/javascript/packs/application.css
-</span><span class="gi">+++ b/app/javascript/packs/application.css
-</span><span class="p">@@ -6,3 +6,15 @@</span>
- [open].backdrop\:hidden::backdrop {
-   display: none;
- }
-<span class="gi">+
-+[data-count-value]::before {
-+  content: attr(data-count-value) " " attr(data-plural-value);
-+}
-+
-+[data-count-value="0"]::before {
-+  content: "";
-+}
-+
-+[data-count-value="1"]::before {
-+  content: attr(data-count-value) " " attr(data-singular-value);
-+}
-</span></code></pre></div></details>
-
-              <details
-  id="app/views/application/_row.html.erb"
-  open
-  class="file"
->
-  <summary class="file__name">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/application/_row.html.erb</title>
-  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
-</svg>
-
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/application/_row.html.erb</title>
-  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
-</svg>
-
-
-    <code>
-      app/views/application/_row.html.erb
-    </code>
-  </summary>
-
-<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/application/_row.html.erb b/app/views/application/_row.html.erb
-index 8388c3e..e884534 100644
-</span><span class="gd">--- a/app/views/application/_row.html.erb
-</span><span class="gi">+++ b/app/views/application/_row.html.erb
-</span><span class="p">@@ -1,3 +1,3 @@</span>
- &lt;% class_list = class_names("flex flex-row flex-start items-center", local_assigns.delete(:class)) %&gt;
- 
-<span class="gd">-&lt;%= tag.tr(yield, class: class_list, **local_assigns) %&gt;
-</span><span class="gi">+&lt;%= tag.tr(yield, role: :row, class: class_list, **local_assigns) %&gt;
-</span></code></pre></div></details>
 
               <details
   id="app/views/events/new.html.erb"
@@ -306,75 +243,21 @@ index 8388c3e..e884534 100644
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/events/new.html.erb b/app/views/events/new.html.erb
-index 810a475..1997689 100644
+index bb04640..1f8b3d6 100644
 </span><span class="gd">--- a/app/views/events/new.html.erb
 </span><span class="gi">+++ b/app/views/events/new.html.erb
-</span><span class="p">@@ -1,11 +1,18 @@</span>
+</span><span class="p">@@ -1,4 +1,10 @@</span>
 <span class="gd">-&lt;%= form_with(scope: :event, url: completions_path, html: { autocomplete: :off, "data-bulk-target": "form", "data-action": "input-&gt;bulk#resetIfAllUnchecked" }) do |form| %&gt;
 </span><span class="gi">+&lt;%= form_with(scope: :event, url: completions_path, html: { autocomplete: :off, "data-bulk-target": "form", "data-action": "input-&gt;bulk#resetIfAllUnchecked input-&gt;bulk#announceSelected" }) do |form| %&gt;
-+  &lt;output class="sr-only" tabindex="-1"
-+    data-count-value="0"
-+    data-singular-value="&lt;%= translate(".tasks", count: 1) %&gt;"
-+    data-plural-value="&lt;%= translate(".tasks", count: 2) %&gt;"
++  &lt;output class="sr-only"
++    data-bulk-singular-value="&lt;%= translate(".tasks", count: 1) %&gt;"
++    data-bulk-plural-value="&lt;%= translate(".tasks", count: 2) %&gt;"
 +    data-bulk-target="output"
 +  &gt;&lt;/output&gt;
 +
 </span>   &lt;fieldset&gt;
-<span class="gd">-    &lt;table&gt;
-</span><span class="gi">+    &lt;table role="grid"&gt;
-</span>       &lt;tbody&gt;
-         &lt;%= form.collection_check_boxes :task_ids, tasks.todo, :id, :name do |builder| %&gt;
-           &lt;%= render "row", class: "absolute", "data-controller": "tethered",
-             "data-tethered-selector-value": "#" + dom_id(builder.object) do %&gt;
-<span class="gd">-            &lt;td&gt;
-</span><span class="gi">+            &lt;td role="cell"&gt;
-</span>               &lt;%= builder.check_box class: "
-                 focus:shadow-outline
-                 form-checkbox
-<span class="p">@@ -15,35 +22,30 @@</span>
-                 w-6
-               " %&gt;
-             &lt;/td&gt;
-<span class="gd">-            &lt;td&gt;&lt;%= builder.label %&gt;&lt;/td&gt;
-</span><span class="gi">+            &lt;td role="cell"&gt;&lt;%= builder.label %&gt;&lt;/td&gt;
-</span>           &lt;% end %&gt;
-         &lt;% end %&gt;
-       &lt;/tbody&gt;
-<span class="gi">+
-</span>       &lt;tfoot&gt;
-         &lt;%= render "row", class: "absolute justify-center left-0 right-0" do %&gt;
-           &lt;% with_options scope: [:helpers, :submit, :event] do |action| %&gt;
-<span class="gd">-            &lt;td&gt;
-</span><span class="gi">+            &lt;td role="cell"&gt;
-</span>               &lt;%= render "button", builder: form, class: "bg-green-400 text-white" do %&gt;
-                 &lt;%= action.translate(:complete) %&gt;
-               &lt;% end %&gt;
-             &lt;/td&gt;
- 
-<span class="gd">-            &lt;td&gt;
-</span><span class="gi">+            &lt;td role="cell"&gt;
-</span>               &lt;%= render "button", builder: form, formaction: delays_path, class: "bg-teal-400 text-white" do %&gt;
-                 &lt;%= action.translate(:delay) %&gt;
-               &lt;% end %&gt;
-             &lt;/td&gt;
- 
-<span class="gd">-            &lt;td&gt;
--              &lt;%= form.button action.translate(:close), type: :reset, class: "
--                bg-black
--                text-white
--                focus:outline-none
--                focus:shadow-outline
--                hover:shadow-outline
--                p-2
--                rounded
--              " %&gt;
-</span><span class="gi">+            &lt;td role="cell"&gt;
-+              &lt;%= render "button", builder: form, type: :reset, class: "bg-black text-white" do %&gt;
-+                &lt;%= action.translate(:close) %&gt;
-+              &lt;% end %&gt;
-</span>             &lt;/td&gt;
-           &lt;% end %&gt;
-         &lt;% end %&gt;
+     &lt;table&gt;
+       &lt;tbody data-controller="tabstop-list" data-action="focusin-&gt;tabstop-list#trapFocus keydown-&gt;tabstop-list#navigate"&gt;
 </code></pre></div></details>
 
               <details
@@ -399,67 +282,18 @@ index 810a475..1997689 100644
   </summary>
 
 <div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/tasks/index.html.erb b/app/views/tasks/index.html.erb
-index 61a7add..40184d3 100644
+index 3dae364..9fdb3b2 100644
 </span><span class="gd">--- a/app/views/tasks/index.html.erb
 </span><span class="gi">+++ b/app/views/tasks/index.html.erb
-</span><span class="p">@@ -2,10 +2,10 @@</span>
- &lt;section&gt;
-   &lt;h2 class="text-2xl"&gt;&lt;%= translate(".todo") %&gt;&lt;/h1&gt;
- 
-<span class="gd">-  &lt;table&gt;
-</span><span class="gi">+  &lt;table role="grid"&gt;
-</span>     &lt;% tasks.todo.each do |task| %&gt;
-       &lt;%= render "row", id: dom_id(task) do %&gt;
-<span class="gd">-        &lt;td&gt;
-</span><span class="gi">+        &lt;td role="cell"&gt;
-</span>           &lt;%= render "button", id: dom_id(task, :select), type: :button, class: "form-checkbox h-6 w-6",
-             "data-action": "click-&gt;bulk#select click-&gt;controls-dialog#showModal",
-             "data-bulk-value": task.id do %&gt;
-<span class="p">@@ -14,8 +14,8 @@</span>
-           &lt;% end %&gt;
+</span><span class="p">@@ -15,7 +15,7 @@</span>
          &lt;/td&gt;
  
-<span class="gd">-        &lt;td&gt;
--          &lt;label for="&lt;%= dom_id(task, :select) %&gt;"&gt;&lt;%= task.name %&gt;&lt;/span&gt;
-</span><span class="gi">+        &lt;td role="cell"&gt;
-+          &lt;label for="&lt;%= dom_id(task, :select) %&gt;"&gt;&lt;%= task.name %&gt;&lt;/label&gt;
+         &lt;td&gt;
+<span class="gd">-          &lt;label for="&lt;%= dom_id(task, :select) %&gt;"&gt;&lt;%= task.name %&gt;&lt;/span&gt;
+</span><span class="gi">+          &lt;label for="&lt;%= dom_id(task, :select) %&gt;"&gt;&lt;%= task.name %&gt;&lt;/label&gt;
 </span>         &lt;/td&gt;
        &lt;% end %&gt;
      &lt;% end %&gt;
-<span class="p">@@ -27,12 +27,12 @@</span>
- &lt;section&gt;
-   &lt;h2 class="text-2xl"&gt;&lt;%= translate(".delayed") %&gt;&lt;/h2&gt;
- 
-<span class="gd">-  &lt;table&gt;
-</span><span class="gi">+  &lt;table role="grid"&gt;
-</span>     &lt;% tasks.delayed.each do |task| %&gt;
-       &lt;%= render "row" do %&gt;
-<span class="gd">-        &lt;td&gt;&lt;%= task.name %&gt;&lt;/td&gt;
-</span><span class="gi">+        &lt;td role="cell"&gt;&lt;%= task.name %&gt;&lt;/td&gt;
-</span> 
-<span class="gd">-        &lt;td&gt;
-</span><span class="gi">+        &lt;td role="cell"&gt;
-</span>           &lt;%= form_with(scope: :event, url: task_promotions_path(task)) do |form| %&gt;
-             &lt;%= render "button", builder: form, class: "border px-2 py-1" do %&gt;
-               &lt;%= translate(:promote, scope: [:helpers, :submit, :event]) %&gt;
-<span class="p">@@ -50,13 +50,13 @@</span>
- &lt;section&gt;
-   &lt;h2 class="text-2xl"&gt;&lt;%= translate(".completed") %&gt;&lt;/h2&gt;
- 
-<span class="gd">-  &lt;table&gt;
-</span><span class="gi">+  &lt;table role="grid"&gt;
-</span>     &lt;% tasks.completed.each do |task| %&gt;
-       &lt;%= render "row" do %&gt;
-<span class="gd">-        &lt;td&gt;&amp;checkmark;&lt;/td&gt;
--        &lt;td&gt;&lt;%= task.name %&gt;&lt;/td&gt;
-</span><span class="gi">+        &lt;td role="cell"&gt;&amp;checkmark;&lt;/td&gt;
-+        &lt;td role="cell"&gt;&lt;%= task.name %&gt;&lt;/td&gt;
-</span> 
-<span class="gd">-        &lt;td&gt;
-</span><span class="gi">+        &lt;td role="cell"&gt;
-</span>           &lt;%= form_with(scope: :event, url: task_reopenings_path(task)) do |form| %&gt;
-             &lt;%= render "button", builder: form, class: "border px-2 py-1" do %&gt;
-               &lt;%= translate(:reopen, scope: [:helpers, :submit, :event]) %&gt;
 </code></pre></div></details>
 
               <details
