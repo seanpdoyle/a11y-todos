@@ -1,0 +1,558 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>Fetch the `<dialog>` contents when opened
+</title>
+    <link href="../../stylesheets/site.css" rel="stylesheet" />
+    <script src="../../javascripts/site.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__name">
+<a href="../../">          a11y-todos
+</a>      </h1>
+
+
+      <nav class="
+        header__navigation
+        navigation
+        
+      ">
+<a href="../009aa036adccf173d809e3c1ec29771d53e211ec/">              &#8592; Previous
+</a>
+<a href="../538c20a74063af948149715b9c1402c1ebede418/">              Next &#8594;
+</a>      </nav>
+    </header>
+
+    <main class="content">
+      <details class="accordion content__item">
+        <summary class="accordion__summary">
+          <div class="accordion__closed">
+            <nav class="
+              commit-history
+              u-db-overflow-y--auto
+              u-mb-overflow-x--scroll
+            ">
+                <a href="../4940917510781bfb9d2314695ec402b2e1609f98/" class="commit-node commit-node--collapsed" title="[SKIP]: Create `git-read` GitHub Action
+"></a>
+                <a href="../b7dd0dfeec5d3ea4332f21d545383e90fdca0358/" class="commit-node commit-node--collapsed" title="[SKIP]: State project goals in a README"></a>
+                <a href="../97ec982181dad3d2765c18bd5440eccdbbc98500/" class="commit-node commit-node--collapsed" title="[GENERATED]: Initial Commit
+"></a>
+                <a href="../3fcacf98b7605fbfe2906a20f60d8c312c6e0a52/" class="commit-node commit-node--collapsed" title="[GENERATED]: Generate db/schema.rb
+"></a>
+                <a href="../dcabcd47c7eb462c872908b002a41be5df59eec5/" class="commit-node commit-node--collapsed" title="Section 1: The Rails"></a>
+                <a href="../08fb54ffa3ba144ad1f1bb0ac787b52410c6b73d/" class="commit-node commit-node--collapsed" title="Mark Tasks as completed
+"></a>
+                <a href="../d82e3e1586e4b74f4d099a63293592089720a441/" class="commit-node commit-node--collapsed" title="Delay multiple Tasks
+"></a>
+                <a href="../2d12a66c44d7cc7e920a31aebd0c6ced6c886f16/" class="commit-node commit-node--collapsed" title="Promote a Task from Delayed back to To-do
+"></a>
+                <a href="../766e956f153bd69ced2ac7658e7b12ea95fed2db/" class="commit-node commit-node--collapsed" title="Reopen a Task that was Completed
+"></a>
+                <a href="../72814697aad135b2d6df8a629b462ac152b10281/" class="commit-node commit-node--collapsed" title="Style with TailwindCSS
+"></a>
+                <a href="../a062d3d1105d243386fc33a13216ead667137d5e/" class="commit-node commit-node--collapsed" title="Section 2: The JavaScript"></a>
+                <a href="../d41ae66683d55539e82f439e818ba6f4e60a1cd4/" class="commit-node commit-node--collapsed" title="Open the `&lt;dialog&gt;` with a `&lt;button&gt;`
+"></a>
+                <a href="../a8e65d9bc8516d5c200e35e9da1e8ae3cdc2361f/" class="commit-node commit-node--collapsed" title="Open Bulk Action `&lt;form&gt;` modally
+"></a>
+                <a href="../009aa036adccf173d809e3c1ec29771d53e211ec/" class="commit-node commit-node--collapsed" title="Close &lt;dialog&gt; when Bulk selection is empty
+"></a>
+                <a href="./" class="commit-node commit-node--collapsed" title="Fetch the `&lt;dialog&gt;` contents when opened
+" aria-current="page"></a>
+                <a href="../538c20a74063af948149715b9c1402c1ebede418/" class="commit-node commit-node--collapsed" title="Treat Lists as separate tab stops
+"></a>
+                <a href="../5c0746ce369b726b090be61b4b2b70c72c6e8d81/" class="commit-node commit-node--collapsed" title="Section 3: How can we improve accessibility?"></a>
+                <a href="../aeb9248af9c8c09d921d97051cea3d9ff7d53a89/" class="commit-node commit-node--collapsed" title="Mark &lt;main inert&gt; when &lt;dialog&gt; open
+"></a>
+                <a href="../4c97fcd4e67d369ac2179a7c11aa454b62bc6fa0/" class="commit-node commit-node--collapsed" title="Announce selected Task count
+"></a>
+            </nav>
+
+            <div class="accordion__toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Expand History</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+
+          <div class="accordion__opened">
+            <div class="accordion__toggle accordion__toggle--fill">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--desktop"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+</svg>
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="accordion--mobile"><title>Collapse History</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+            </div>
+          </div>
+        </summary>
+
+        <nav class="
+          commit-history
+          commit-history--full
+          u-db-overflow-y--auto
+          u-mb-overflow-x--scroll
+        ">
+<a href="../4940917510781bfb9d2314695ec402b2e1609f98/" class="commit-node commit-node--full">              <p>[SKIP]: Create <code>git-read</code> GitHub Action</p>
+
+</a><a href="../b7dd0dfeec5d3ea4332f21d545383e90fdca0358/" class="commit-node commit-node--full">              <p>[SKIP]: State project goals in a README</p>
+
+</a><a href="../97ec982181dad3d2765c18bd5440eccdbbc98500/" class="commit-node commit-node--full">              <p>[GENERATED]: Initial Commit</p>
+
+</a><a href="../3fcacf98b7605fbfe2906a20f60d8c312c6e0a52/" class="commit-node commit-node--full">              <p>[GENERATED]: Generate db/schema.rb</p>
+
+</a><a href="../dcabcd47c7eb462c872908b002a41be5df59eec5/" class="commit-node commit-node--full">              <p>Section 1: The Rails</p>
+
+</a><a href="../08fb54ffa3ba144ad1f1bb0ac787b52410c6b73d/" class="commit-node commit-node--full">              <p>Mark Tasks as completed</p>
+
+</a><a href="../d82e3e1586e4b74f4d099a63293592089720a441/" class="commit-node commit-node--full">              <p>Delay multiple Tasks</p>
+
+</a><a href="../2d12a66c44d7cc7e920a31aebd0c6ced6c886f16/" class="commit-node commit-node--full">              <p>Promote a Task from Delayed back to To-do</p>
+
+</a><a href="../766e956f153bd69ced2ac7658e7b12ea95fed2db/" class="commit-node commit-node--full">              <p>Reopen a Task that was Completed</p>
+
+</a><a href="../72814697aad135b2d6df8a629b462ac152b10281/" class="commit-node commit-node--full">              <p>Style with TailwindCSS</p>
+
+</a><a href="../a062d3d1105d243386fc33a13216ead667137d5e/" class="commit-node commit-node--full">              <p>Section 2: The JavaScript</p>
+
+</a><a href="../d41ae66683d55539e82f439e818ba6f4e60a1cd4/" class="commit-node commit-node--full">              <p>Open the <code>&lt;dialog&gt;</code> with a <code>&lt;button&gt;</code></p>
+
+</a><a href="../a8e65d9bc8516d5c200e35e9da1e8ae3cdc2361f/" class="commit-node commit-node--full">              <p>Open Bulk Action <code>&lt;form&gt;</code> modally</p>
+
+</a><a href="../009aa036adccf173d809e3c1ec29771d53e211ec/" class="commit-node commit-node--full">              <p>Close <dialog> when Bulk selection is empty</p>
+
+</a><a href="./" class="commit-node commit-node--full" aria-current="page">              <p>Fetch the <code>&lt;dialog&gt;</code> contents when opened</p>
+
+</a><a href="../538c20a74063af948149715b9c1402c1ebede418/" class="commit-node commit-node--full">              <p>Treat Lists as separate tab stops</p>
+
+</a><a href="../5c0746ce369b726b090be61b4b2b70c72c6e8d81/" class="commit-node commit-node--full">              <p>Section 3: How can we improve accessibility?</p>
+
+</a><a href="../aeb9248af9c8c09d921d97051cea3d9ff7d53a89/" class="commit-node commit-node--full">              <p>Mark <main inert> when <dialog> open</p>
+
+</a><a href="../4c97fcd4e67d369ac2179a7c11aa454b62bc6fa0/" class="commit-node commit-node--full">              <p>Announce selected Task count</p>
+
+</a>        </nav>
+      </details>
+
+      <article class="
+        commit-content
+        commit-content--double
+        content__item
+        content__item--grow
+      ">
+        <section class="commit commit--message">
+
+          <h1 id="fetch-the-dialog-contents-when-opened">Fetch the <code>&lt;dialog&gt;</code> contents when opened</h1>
+
+<p>Instead of calling <code>render(template: &quot;events/new&quot;)</code> within the
+<code>&lt;dialog&gt;</code> element, fetch that fragment dynamically through an
+Asynchronous JavaScript and XML (<abbr title="Asynchronous JavaScript
+and XML">AJAX</abbr>) request.</p>
+
+<p>Since the <code>&lt;form&gt;</code> element and its contents will be rendered on the
+server, move the <code>bulk#select</code> Stimulus action logic to the
+<code>EventsController#new</code> action and template. For example, instead of
+using JavaScript to set an <code>&lt;input type=&quot;checkbox&quot;&gt;</code> element&rsquo;s <code>checked</code>
+and <code>autofocus</code> properties, render it with the <code>checked</code> and <code>autofocus</code>
+attributes.</p>
+
+        </section>
+
+          <aside class="commit commit--diff commit--long-content">
+              <details
+  id="app/controllers/events_controller.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/controllers/events_controller.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/controllers/events_controller.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/controllers/events_controller.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/controllers/events_controller.rb b/app/controllers/events_controller.rb
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..2f477f2
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/controllers/events_controller.rb
+</span><span class="p">@@ -0,0 +1,8 @@</span>
+<span class="gi">+class EventsController &lt; ApplicationController
++  def new
++    tasks = Task.all
++    selected_task = tasks.find_by(id: params[:task_id])
++
++    render layout: false, locals: {tasks: tasks, selected_task: selected_task}
++  end
++end
+</span></code></pre></div></details>
+
+              <details
+  id="app/javascript/controllers/bulk_controller.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/controllers/bulk_controller.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/controllers/bulk_controller.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/controllers/bulk_controller.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/bulk_controller.js b/app/javascript/controllers/bulk_controller.js
+index b1fb5d7..07bdb81 100644
+</span><span class="gd">--- a/app/javascript/controllers/bulk_controller.js
+</span><span class="gi">+++ b/app/javascript/controllers/bulk_controller.js
+</span><span class="p">@@ -1,29 +1,23 @@</span>
+ import { Controller } from "stimulus"
+ 
+ export default class extends Controller {
+<span class="gd">-  static targets = [ "form" ]
+-
+-  select({ currentTarget }) {
+-    const value = currentTarget.getAttribute(`data-${this.identifier}-value`)
+-    const input = this.inputTargets.find(input =&gt; input.value === value)
+-
+-    if (input) {
+-      input.checked = true
+-      input.focus()
+-    }
+-  }
+-
+</span>   resetIfAllUnchecked() {
+     if (this.inputTargets.some(input =&gt; input.checked)) return
+ 
+<span class="gd">-    this.resetForm()
+</span><span class="gi">+    this.reset()
+</span>   }
+ 
+<span class="gd">-  resetForm() {
+</span><span class="gi">+  reset() {
+</span>     this.formTarget.reset()
+   }
+ 
+   get inputTargets() {
+     return Array.from(this.formTarget.elements)
+   }
+<span class="gi">+
++  get formTarget() {
++    const selector = `[data-${this.identifier}-target="form"]`
++
++    return this.element.querySelector(selector)
++  }
+</span> }
+</code></pre></div></details>
+
+              <details
+  id="app/javascript/controllers/controls_dialog_controller.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/controllers/controls_dialog_controller.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/controllers/controls_dialog_controller.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/controllers/controls_dialog_controller.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/controls_dialog_controller.js b/app/javascript/controllers/controls_dialog_controller.js
+index c49099e..5a795db 100644
+</span><span class="gd">--- a/app/javascript/controllers/controls_dialog_controller.js
+</span><span class="gi">+++ b/app/javascript/controllers/controls_dialog_controller.js
+</span><span class="p">@@ -1,7 +1,11 @@</span>
+ import { Controller } from "stimulus"
+ 
+ export default class extends Controller {
+<span class="gd">-  static targets = [ "dialog" ]
+</span><span class="gi">+  static targets = [ "dialog", "remoteFragment" ]
++
++  release() {
++    this.remoteFragmentTargets.forEach(form =&gt; form.reset())
++  }
+</span> 
+   showModal() {
+     this.dialogTarget.showModal()
+</code></pre></div></details>
+
+              <details
+  id="app/javascript/controllers/remote_fragment_controller.js"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/javascript/controllers/remote_fragment_controller.js</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/javascript/controllers/remote_fragment_controller.js</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/javascript/controllers/remote_fragment_controller.js
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/javascript/controllers/remote_fragment_controller.js b/app/javascript/controllers/remote_fragment_controller.js
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..91e3d2d
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/app/javascript/controllers/remote_fragment_controller.js
+</span><span class="p">@@ -0,0 +1,17 @@</span>
+<span class="gi">+import { Controller } from "stimulus"
++
++export default class extends Controller {
++  static values = { outletSelector: String }
++
++  replace({ detail: [ response ] }) {
++    this.outletTargets.forEach(outlet =&gt; outlet.innerHTML = response.body.innerHTML)
++  }
++
++  remove() {
++    this.outletTargets.forEach(outlet =&gt; outlet.innerHTML = "")
++  }
++
++  get outletTargets() {
++    return document.querySelectorAll(this.outletSelectorValue)
++  }
++}
+</span></code></pre></div></details>
+
+              <details
+  id="app/views/events/new.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/events/new.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/events/new.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/events/new.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/events/new.html.erb b/app/views/events/new.html.erb
+index 9442652..744167e 100644
+</span><span class="gd">--- a/app/views/events/new.html.erb
+</span><span class="gi">+++ b/app/views/events/new.html.erb
+</span><span class="p">@@ -1,5 +1,6 @@</span>
+ &lt;%= form_with scope: :event, url: completions_path, html: {
+<span class="gd">-  autocomplete: :off, "data-bulk-target": "form", "data-action": "input-&gt;bulk#resetIfAllUnchecked"
+</span><span class="gi">+  autocomplete: :off, "data-bulk-target": "form",
++  "data-action": "input-&gt;bulk#resetIfAllUnchecked"
+</span> }  do |form| %&gt;
+   &lt;fieldset&gt;
+     &lt;table&gt;
+<span class="p">@@ -8,14 +9,16 @@</span>
+           &lt;%= render "row", class: "absolute", "data-controller": "tethered",
+             "data-tethered-selector-value": "#" + dom_id(builder.object) do %&gt;
+             &lt;td&gt;
+<span class="gd">-              &lt;%= builder.check_box class: "
+-                focus:shadow-outline
+-                form-checkbox
+-                h-6
+-                hover:shadow-outline
+-                text-yellow-500
+-                w-6
+-              " %&gt;
+</span><span class="gi">+              &lt;% (builder.object == selected_task).tap do |selected| %&gt;
++                &lt;%= builder.check_box checked: selected, autofocus: selected, class: "
++                  focus:shadow-outline
++                  form-checkbox
++                  h-6
++                  hover:shadow-outline
++                  text-yellow-500
++                  w-6
++                " %&gt;
++              &lt;% end %&gt;
+</span>             &lt;/td&gt;
+             &lt;td&gt;&lt;%= builder.label %&gt;&lt;/td&gt;
+           &lt;% end %&gt;
+</code></pre></div></details>
+
+              <details
+  id="app/views/layouts/application.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/layouts/application.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/layouts/application.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/layouts/application.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb
+index 64d275b..4c7b939 100644
+</span><span class="gd">--- a/app/views/layouts/application.html.erb
+</span><span class="gi">+++ b/app/views/layouts/application.html.erb
+</span><span class="p">@@ -14,7 +14,8 @@</span>
+       &lt;%= yield %&gt;
+     &lt;/main&gt;
+ 
+<span class="gd">-    &lt;dialog data-controller="dialog" data-controls-dialog-target="dialog" data-action="close-&gt;bulk#resetForm reset-&gt;dialog#close" class="
+</span><span class="gi">+    &lt;dialog data-controller="dialog" data-controls-dialog-target="dialog"
++      data-action="close-&gt;bulk#reset close-&gt;controls-dialog#release reset-&gt;dialog#close" class="
+</span>       backdrop:hidden
+       bg-transparent
+       border-0
+<span class="p">@@ -22,7 +23,14 @@</span>
+       p-0
+       w-full
+     "&gt;
+<span class="gd">-      &lt;%= render(template: "events/new", locals: {tasks: Task.all}) %&gt;
+</span><span class="gi">+      &lt;div data-remote-fragment-outlet-target&gt;&lt;/div&gt;
++
++      &lt;%= form_with url: new_event_path, id: :new_event_form, method: :get, html: {
++        "data-controller": "remote-fragment",
++        "data-controls-dialog-target": "remoteFragment",
++        "data-remote-fragment-outlet-selector-value": "[data-remote-fragment-outlet-target]",
++        "data-action": "ajax:success-&gt;remote-fragment#replace reset-&gt;remote-fragment#remove"
++      } %&gt;
+</span>     &lt;/dialog&gt;
+   &lt;/body&gt;
+ &lt;/html&gt;
+</code></pre></div></details>
+
+              <details
+  id="app/views/tasks/index.html.erb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse app/views/tasks/index.html.erb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand app/views/tasks/index.html.erb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      app/views/tasks/index.html.erb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/app/views/tasks/index.html.erb b/app/views/tasks/index.html.erb
+index 61b2067..cf5debd 100644
+</span><span class="gd">--- a/app/views/tasks/index.html.erb
+</span><span class="gi">+++ b/app/views/tasks/index.html.erb
+</span><span class="p">@@ -6,9 +6,9 @@</span>
+     &lt;% tasks.todo.each do |task| %&gt;
+       &lt;%= render "row", id: dom_id(task) do %&gt;
+         &lt;td&gt;
+<span class="gd">-          &lt;%= render "button", id: dom_id(task, :select), type: :button, class: "form-checkbox h-6 w-6",
+-            "data-action": "click-&gt;bulk#select click-&gt;controls-dialog#showModal",
+-            "data-bulk-value": task.id do %&gt;
+</span><span class="gi">+          &lt;%= render "button", id: dom_id(task, :select), class: "form-checkbox h-6 w-6",
++            form: :new_event_form, name: :task_id, value: task.id,
++            "data-action": "click-&gt;controls-dialog#showModal" do %&gt;
+</span>             &lt;span class="sr-only"&gt;&lt;%= translate(".select") %&gt;&lt;/span&gt;
+             &lt;span class="sr-only" aria-hidden="true"&gt;&lt;%= task.name %&gt;&lt;/span&gt;
+           &lt;% end %&gt;
+</code></pre></div></details>
+
+              <details
+  id="config/routes.rb"
+  open
+  class="file"
+>
+  <summary class="file__name">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--close"><title>Collapse config/routes.rb</title>
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" role="img" class="file__toggle file__toggle--open"><title>Expand config/routes.rb</title>
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clip-rule="evenodd"></path>
+</svg>
+
+
+    <code>
+      config/routes.rb
+    </code>
+  </summary>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gh">diff --git a/config/routes.rb b/config/routes.rb
+index 6a4097b..daf824b 100644
+</span><span class="gd">--- a/config/routes.rb
+</span><span class="gi">+++ b/config/routes.rb
+</span><span class="p">@@ -8,5 +8,9 @@</span> Rails.application.routes.draw do
+     resources :reopenings, only: :create
+   end
+ 
+<span class="gi">+  constraints -&gt; { _1.xml_http_request? } do
++    resources :events, only: :new
++  end
++
+</span>   root to: "tasks#index"
+ end
+</code></pre></div></details>
+
+          </aside>
+      </article>
+    </main>
+  </body>
+</html>
