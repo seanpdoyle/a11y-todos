@@ -8,6 +8,7 @@
         <td>
           <%= render "button", id: dom_id(task, :select), class: "form-checkbox h-6 w-6",
             form: :new_event_form, name: :task_id, value: task.id,
+            role: :checkbox, "aria-checked": "false",
             "data-action": "click->controls-dialog#showModal" do %>
             <span class="sr-only"><%= translate(".select") %></span>
             <span class="sr-only" aria-hidden="true"><%= task.name %></span>
